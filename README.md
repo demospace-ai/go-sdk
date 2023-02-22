@@ -1,4 +1,4 @@
-# github.com/fabra-io/go-sdk
+# Fabra Go SDK
 
 <!-- Start SDK Installation -->
 ## SDK Installation
