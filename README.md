@@ -1,5 +1,11 @@
 # Fabra Go SDK
 
+<div align="center">
+   <p>Use the Fabra API to build customer-facing data warehouse integrations to let your customers start sending data to your application. Unblock your sales pipeline in days, not months.</p>
+   <a href="https://github.com/fabra-io/go-sdk/actions"><img src="https://img.shields.io/github/actions/workflow/status/fabra-io/go-sdk/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
+   <a href="https://www.fabra.io/#Email-Hero"><img src="https://img.shields.io/static/v1?label=Docs&message=Sign Up&color=2ca47c&style=for-the-badge" /></a>
+</div>
+
 <!-- Start SDK Installation -->
 ## SDK Installation
 
