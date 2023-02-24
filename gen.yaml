@@ -1,8 +1,11 @@
+configVersion: 1.0.0
 management:
-    openapi-checksum: 5bdbad96d6d347d81789110337cf504a
-    openapi-version: 0.1.0
-    speakeasy-version: 1.4.8
+    docChecksum: 5bdbad96d6d347d81789110337cf504a
+    docVersion: 0.1.0
+    speakeasyVersion: 1.5.0
+generation:
+    telemetryEnabled: false
+    sdkClassName: fabra
 go:
-    version: 0.1.1
-    packagename: github.com/fabra-io/go-sdk
-sdkclassname: fabra
+    version: 0.2.0
+    packageName: github.com/fabra-io/go-sdk
