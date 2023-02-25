@@ -20,6 +20,7 @@ go get github.com/fabra-io/go-sdk
 package main
 
 import (
+    "context"
     "log"
     "github.com/fabra-io/go-sdk"
     "github.com/fabra-io/go-sdk/pkg/models/shared"
@@ -33,7 +34,7 @@ func main() {
                 APIKeyAuth: shared.SchemeAPIKeyAuth{
                     APIKey: "YOUR_API_KEY_HERE",
                 },
-            }
+            },
         ),
     }
 
@@ -44,7 +45,8 @@ func main() {
             ConnectionID: 548814,
         },
     }
-    
+
+    ctx := context.Background()
     res, err := s.Connection.GetNamespaces(ctx, req)
     if err != nil {
         log.Fatal(err)
@@ -53,6 +55,7 @@ func main() {
     if res.GetNamespaces200ApplicationJSONObject != nil {
         // handle response
     }
+}
 ```
 <!-- End SDK Example Usage -->
 
