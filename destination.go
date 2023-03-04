@@ -65,6 +65,7 @@ func (s *destination) CreateDestination(ctx context.Context, request operations.
 	res := &operations.CreateDestinationResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:
@@ -110,6 +111,7 @@ func (s *destination) GetDestinations(ctx context.Context) (*operations.GetDesti
 	res := &operations.GetDestinationsResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:

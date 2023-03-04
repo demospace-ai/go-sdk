@@ -65,6 +65,7 @@ func (s *source) CreateSource(ctx context.Context, request operations.CreateSour
 	res := &operations.CreateSourceResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:
@@ -110,6 +111,7 @@ func (s *source) GetSources(ctx context.Context) (*operations.GetSourcesResponse
 	res := &operations.GetSourcesResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:

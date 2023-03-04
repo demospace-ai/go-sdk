@@ -2,6 +2,7 @@ package operations
 
 import (
 	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	"net/http"
 )
 
 type GetSchemaQueryParams struct {
@@ -21,5 +22,6 @@ type GetSchema200ApplicationJSON struct {
 type GetSchemaResponse struct {
 	ContentType                       string
 	StatusCode                        int
+	RawResponse                       *http.Response
 	GetSchema200ApplicationJSONObject *GetSchema200ApplicationJSON
 }

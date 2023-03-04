@@ -1,5 +1,9 @@
 package operations
 
+import (
+	"net/http"
+)
+
 type GetTablesQueryParams struct {
 	ConnectionID int64  `queryParam:"style=form,explode=true,name=connectionID"`
 	Namespace    string `queryParam:"style=form,explode=true,name=namespace"`
@@ -16,5 +20,6 @@ type GetTables200ApplicationJSON struct {
 type GetTablesResponse struct {
 	ContentType                       string
 	StatusCode                        int
+	RawResponse                       *http.Response
 	GetTables200ApplicationJSONObject *GetTables200ApplicationJSON
 }

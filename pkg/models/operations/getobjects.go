@@ -2,6 +2,7 @@ package operations
 
 import (
 	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	"net/http"
 )
 
 type GetObjects200ApplicationJSON struct {
@@ -11,5 +12,6 @@ type GetObjects200ApplicationJSON struct {
 type GetObjectsResponse struct {
 	ContentType                        string
 	StatusCode                         int
+	RawResponse                        *http.Response
 	GetObjects200ApplicationJSONObject *GetObjects200ApplicationJSON
 }
