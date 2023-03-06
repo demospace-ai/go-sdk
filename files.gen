@@ -1,5 +1,6 @@
 connection.go
 destination.go
+linktoken.go
 object.go
 source.go
 sync.go
@@ -21,6 +22,7 @@ pkg/models/operations/getschema.go
 pkg/models/operations/gettables.go
 pkg/models/operations/createdestination.go
 pkg/models/operations/getdestinations.go
+pkg/models/operations/createlinktoken.go
 pkg/models/operations/createobject.go
 pkg/models/operations/getobjects.go
 pkg/models/operations/createsource.go
@@ -37,6 +39,8 @@ pkg/models/shared/snowflakeconfig.go
 pkg/models/shared/redshiftconfig.go
 pkg/models/shared/mongodbconfig.go
 pkg/models/shared/bigqueryconfig.go
+pkg/models/shared/createlinktokenresponse.go
+pkg/models/shared/createlinktokenrequest.go
 pkg/models/shared/object.go
 pkg/models/shared/objectfield.go
 pkg/models/shared/objectinput.go

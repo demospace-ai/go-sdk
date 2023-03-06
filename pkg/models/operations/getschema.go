@@ -8,7 +8,7 @@ import (
 type GetSchemaQueryParams struct {
 	ConnectionID int64  `queryParam:"style=form,explode=true,name=connectionID"`
 	Namespace    string `queryParam:"style=form,explode=true,name=namespace"`
-	TableName    string `queryParam:"style=form,explode=true,name=table_name"`
+	TableName    string `queryParam:"style=form,explode=true,name=tableName"`
 }
 
 type GetSchemaRequest struct {
