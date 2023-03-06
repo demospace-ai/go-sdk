@@ -21,6 +21,7 @@ func String(s string) *string { return &s }
 type Fabra struct {
 	Connection  *connection
 	Destination *destination
+	LinkToken   *linkToken
 	Object      *object
 	Source      *source
 	Sync        *sync
@@ -68,8 +69,8 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Fabra {
 	sdk := &Fabra{
 		_language:   "go",
-		_sdkVersion: "0.5.1",
-		_genVersion: "1.8.4",
+		_sdkVersion: "0.5.2",
+		_genVersion: "1.8.5",
 	}
 	for _, opt := range opts {
 		opt(sdk)
@@ -103,6 +104,15 @@ func New(opts ...SDKOption) *Fabra {
 	)
 
 	sdk.Destination = newDestination(
+		sdk._defaultClient,
+		sdk._securityClient,
+		sdk._serverURL,
+		sdk._language,
+		sdk._sdkVersion,
+		sdk._genVersion,
+	)
+
+	sdk.LinkToken = newLinkToken(
 		sdk._defaultClient,
 		sdk._securityClient,
 		sdk._serverURL,

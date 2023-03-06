@@ -70,6 +70,10 @@ func main() {
 * `CreateDestination` - Create a new destination
 * `GetDestinations` - Get all destinations
 
+### LinkToken
+
+* `CreateLinkToken` - Create a new link token
+
 ### Object
 
 * `CreateObject` - Create a new object
