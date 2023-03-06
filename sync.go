@@ -65,6 +65,7 @@ func (s *sync) CreateSync(ctx context.Context, request operations.CreateSyncRequ
 	res := &operations.CreateSyncResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:
@@ -110,6 +111,7 @@ func (s *sync) GetSyncs(ctx context.Context) (*operations.GetSyncsResponse, erro
 	res := &operations.GetSyncsResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:

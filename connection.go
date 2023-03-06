@@ -59,6 +59,7 @@ func (s *connection) GetNamespaces(ctx context.Context, request operations.GetNa
 	res := &operations.GetNamespacesResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:
@@ -108,6 +109,7 @@ func (s *connection) GetSchema(ctx context.Context, request operations.GetSchema
 	res := &operations.GetSchemaResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:
@@ -157,6 +159,7 @@ func (s *connection) GetTables(ctx context.Context, request operations.GetTables
 	res := &operations.GetTablesResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:

@@ -1,5 +1,9 @@
 package operations
 
+import (
+	"net/http"
+)
+
 type GetNamespacesQueryParams struct {
 	ConnectionID int64 `queryParam:"style=form,explode=true,name=connectionID"`
 }
@@ -15,5 +19,6 @@ type GetNamespaces200ApplicationJSON struct {
 type GetNamespacesResponse struct {
 	ContentType                           string
 	StatusCode                            int
+	RawResponse                           *http.Response
 	GetNamespaces200ApplicationJSONObject *GetNamespaces200ApplicationJSON
 }

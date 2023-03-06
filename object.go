@@ -65,6 +65,7 @@ func (s *object) CreateObject(ctx context.Context, request operations.CreateObje
 	res := &operations.CreateObjectResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:
@@ -110,6 +111,7 @@ func (s *object) GetObjects(ctx context.Context) (*operations.GetObjectsResponse
 	res := &operations.GetObjectsResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:

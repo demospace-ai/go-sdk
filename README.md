@@ -28,17 +28,13 @@ import (
 )
 
 func main() {
-    opts := []fabra.SDKOption{
-        fabra.WithSecurity(
-            shared.Security{
-                APIKeyAuth: shared.SchemeAPIKeyAuth{
-                    APIKey: "YOUR_API_KEY_HERE",
-                },
+    s := fabra.New(fabra.WithSecurity(
+        shared.Security{
+            APIKeyAuth: shared.SchemeAPIKeyAuth{
+                APIKey: "YOUR_API_KEY_HERE",
             },
-        ),
-    }
-
-    s := fabra.New(opts...)
+        },
+    ))
     
     req := operations.GetNamespacesRequest{
         QueryParams: operations.GetNamespacesQueryParams{

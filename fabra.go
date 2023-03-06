@@ -15,6 +15,9 @@ type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
 
+// String provides a helper function to return a pointer to a string
+func String(s string) *string { return &s }
+
 type Fabra struct {
 	Connection  *connection
 	Destination *destination
@@ -34,7 +37,13 @@ type Fabra struct {
 
 type SDKOption func(*Fabra)
 
-func WithServerURL(serverURL string, params map[string]string) SDKOption {
+func WithServerURL(serverURL string) SDKOption {
+	return func(sdk *Fabra) {
+		sdk._serverURL = serverURL
+	}
+}
+
+func WithTemplatedServerURL(serverURL string, params map[string]string) SDKOption {
 	return func(sdk *Fabra) {
 		if params != nil {
 			serverURL = utils.ReplaceParameters(serverURL, params)
@@ -59,8 +68,8 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Fabra {
 	sdk := &Fabra{
 		_language:   "go",
-		_sdkVersion: "0.2.1",
-		_genVersion: "1.5.3",
+		_sdkVersion: "0.5.1",
+		_genVersion: "1.8.4",
 	}
 	for _, opt := range opts {
 		opt(sdk)
