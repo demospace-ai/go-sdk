@@ -28,14 +28,14 @@ import (
 )
 
 func main() {
-    s := fabra.New(fabra.WithSecurity(
-        shared.Security{
+    s := fabra.New(
+        WithSecurity(        shared.Security{
             APIKeyAuth: shared.SchemeAPIKeyAuth{
                 APIKey: "YOUR_API_KEY_HERE",
             },
-        },
-    ))
-    
+        }),
+    )
+
     req := operations.GetNamespacesRequest{
         QueryParams: operations.GetNamespacesQueryParams{
             ConnectionID: 548814,

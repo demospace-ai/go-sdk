@@ -34,7 +34,7 @@ func (s *object) CreateObject(ctx context.Context, request operations.CreateObje
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/object"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "Request", "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -79,6 +79,7 @@ func (s *object) CreateObject(ctx context.Context, request operations.CreateObje
 			res.CreateObject200ApplicationJSONObject = out
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
 	case httpRes.StatusCode == 500:
 	}
 
@@ -125,6 +126,7 @@ func (s *object) GetObjects(ctx context.Context) (*operations.GetObjectsResponse
 			res.GetObjects200ApplicationJSONObject = out
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
 	case httpRes.StatusCode == 500:
 	}
 

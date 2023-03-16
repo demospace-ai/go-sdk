@@ -35,7 +35,7 @@ func (s *linkToken) CreateLinkToken(ctx context.Context, request operations.Crea
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/link_token"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "Request", "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -80,6 +80,7 @@ func (s *linkToken) CreateLinkToken(ctx context.Context, request operations.Crea
 			res.CreateLinkTokenResponse = out
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
 	case httpRes.StatusCode == 500:
 	}
 

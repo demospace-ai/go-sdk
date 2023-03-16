@@ -34,7 +34,7 @@ func (s *sync) CreateSync(ctx context.Context, request operations.CreateSyncRequ
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/sync"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "Request", "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -79,6 +79,7 @@ func (s *sync) CreateSync(ctx context.Context, request operations.CreateSyncRequ
 			res.CreateSync200ApplicationJSONObject = out
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
 	case httpRes.StatusCode == 500:
 	}
 
@@ -125,6 +126,7 @@ func (s *sync) GetSyncs(ctx context.Context) (*operations.GetSyncsResponse, erro
 			res.GetSyncs200ApplicationJSONObject = out
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
 	case httpRes.StatusCode == 500:
 	}
 

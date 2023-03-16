@@ -34,7 +34,7 @@ func (s *destination) CreateDestination(ctx context.Context, request operations.
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/destination"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "Request", "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -79,6 +79,7 @@ func (s *destination) CreateDestination(ctx context.Context, request operations.
 			res.CreateDestination200ApplicationJSONObject = out
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
 	case httpRes.StatusCode == 500:
 	}
 
@@ -125,6 +126,7 @@ func (s *destination) GetDestinations(ctx context.Context) (*operations.GetDesti
 			res.GetDestinations200ApplicationJSONObject = out
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
 	case httpRes.StatusCode == 500:
 	}
 
