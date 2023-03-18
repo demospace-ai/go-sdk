@@ -12,7 +12,7 @@ import (
 
 func main() {
     s := fabra.New(
-        WithSecurity(        shared.Security{
+        fabra.WithSecurity(shared.Security{
             APIKeyAuth: shared.SchemeAPIKeyAuth{
                 APIKey: "YOUR_API_KEY_HERE",
             },
