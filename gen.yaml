@@ -6,7 +6,7 @@ management:
 generation:
   telemetryEnabled: false
   sdkClassName: fabra
-  sdkFlattening: false
+  sdkFlattening: true
 go:
   version: 0.5.2
   packageName: github.com/fabra-io/go-sdk
