@@ -8,5 +8,5 @@ generation:
   sdkClassName: fabra
   sdkFlattening: false
 go:
-  version: 0.7.3
+  version: 0.7.4
   packageName: github.com/fabra-io/go-sdk
