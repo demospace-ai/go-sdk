@@ -69,7 +69,7 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Fabra {
 	sdk := &Fabra{
 		_language:   "go",
-		_sdkVersion: "0.7.2",
+		_sdkVersion: "0.7.3",
 		_genVersion: "1.12.4",
 	}
 	for _, opt := range opts {
