@@ -31,7 +31,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetNamespaces200ApplicationJSONObject != nil {
+    if res.Namespaces != nil {
         // handle response
     }
 }

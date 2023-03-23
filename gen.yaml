@@ -1,12 +1,13 @@
 configVersion: 1.0.0
 management:
-  docChecksum: c18b0156a739c7d3242d3807c2e99e82
+  docChecksum: d016ae393133ddf484189d664481ef5c
   docVersion: 0.1.0
-  speakeasyVersion: 1.13.0
+  speakeasyVersion: 1.15.0
+  generationVersion: 2.13.1
 generation:
   telemetryEnabled: false
   sdkClassName: fabra
   sdkFlattening: false
 go:
-  version: 0.8.0
+  version: 0.8.1
   packageName: github.com/fabra-io/go-sdk

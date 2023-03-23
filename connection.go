@@ -6,11 +6,13 @@ import (
 	"context"
 	"fmt"
 	"github.com/fabra-io/go-sdk/pkg/models/operations"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"github.com/fabra-io/go-sdk/pkg/utils"
 	"net/http"
 	"strings"
 )
 
+// connection - Operations on connections
 type connection struct {
 	defaultClient  HTTPClient
 	securityClient HTTPClient
@@ -67,12 +69,12 @@ func (s *connection) GetNamespaces(ctx context.Context, request operations.GetNa
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *operations.GetNamespaces200ApplicationJSON
+			var out *shared.Namespaces
 			if err := utils.UnmarshalJsonFromResponseBody(httpRes.Body, &out); err != nil {
 				return nil, err
 			}
 
-			res.GetNamespaces200ApplicationJSONObject = out
+			res.Namespaces = out
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough

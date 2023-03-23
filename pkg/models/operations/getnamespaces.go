@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"net/http"
 )
 
@@ -14,15 +15,10 @@ type GetNamespacesRequest struct {
 	QueryParams GetNamespacesQueryParams
 }
 
-// GetNamespaces200ApplicationJSON - Successfully fetched namespaces
-type GetNamespaces200ApplicationJSON struct {
-	Namespaces []string `json:"namespaces,omitempty"`
-}
-
 type GetNamespacesResponse struct {
 	ContentType string
+	// Successfully fetched namespaces
+	Namespaces  *shared.Namespaces
 	StatusCode  int
 	RawResponse *http.Response
-	// Successfully fetched namespaces
-	GetNamespaces200ApplicationJSONObject *GetNamespaces200ApplicationJSON
 }

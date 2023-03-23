@@ -23,12 +23,14 @@ type HTTPClient interface {
 func String(s string) *string { return &s }
 
 type Fabra struct {
+	// Connection - Operations on connections
 	Connection *connection
 	// Destination - Operations on destinations
 	Destination *destination
 	// LinkToken - Operations on link tokens
 	LinkToken *linkToken
-	Object    *object
+	// Object - Operations on objects
+	Object *object
 	// Source - Operations on sources
 	Source *source
 	// Sync - Operations on syncs
@@ -82,8 +84,8 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Fabra {
 	sdk := &Fabra{
 		_language:   "go",
-		_sdkVersion: "0.8.0",
-		_genVersion: "2.12.10",
+		_sdkVersion: "0.8.1",
+		_genVersion: "2.13.1",
 	}
 	for _, opt := range opts {
 		opt(sdk)

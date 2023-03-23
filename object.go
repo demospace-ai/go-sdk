@@ -11,6 +11,7 @@ import (
 	"strings"
 )
 
+// object - Operations on objects
 type object struct {
 	defaultClient  HTTPClient
 	securityClient HTTPClient
