@@ -7,10 +7,6 @@ import (
 	"net/http"
 )
 
-type CreateLinkTokenRequest struct {
-	Request shared.CreateLinkTokenRequest `request:"mediaType=application/json"`
-}
-
 type CreateLinkTokenResponse struct {
 	ContentType string
 	// Successfully created link token

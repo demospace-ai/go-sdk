@@ -13,16 +13,12 @@ import (
 func main() {
     s := fabra.New(
         fabra.WithSecurity(shared.Security{
-            APIKeyAuth: shared.SchemeAPIKeyAuth{
-                APIKey: "YOUR_API_KEY_HERE",
-            },
+            APIKeyAuth: "YOUR_API_KEY_HERE",
         }),
     )
 
     req := operations.GetNamespacesRequest{
-        QueryParams: operations.GetNamespacesQueryParams{
-            ConnectionID: 548814,
-        },
+        ConnectionID: 548814,
     }
 
     ctx := context.Background()

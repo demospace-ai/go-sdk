@@ -7,10 +7,6 @@ import (
 	"net/http"
 )
 
-type CreateObjectRequest struct {
-	Request shared.ObjectInput `request:"mediaType=application/json"`
-}
-
 // CreateObject200ApplicationJSON - Successfully created object
 type CreateObject200ApplicationJSON struct {
 	Object *shared.Object `json:"object,omitempty"`

@@ -6,6 +6,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/fabra-io/go-sdk/pkg/models/operations"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"github.com/fabra-io/go-sdk/pkg/utils"
 	"net/http"
 	"strings"
@@ -33,7 +34,7 @@ func newDestination(defaultClient, securityClient HTTPClient, serverURL, languag
 }
 
 // CreateDestination - Create a new destination
-func (s *destination) CreateDestination(ctx context.Context, request operations.CreateDestinationRequest) (*operations.CreateDestinationResponse, error) {
+func (s *destination) CreateDestination(ctx context.Context, request shared.DestinationInput) (*operations.CreateDestinationResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/destination"
 

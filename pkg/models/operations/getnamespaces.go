@@ -7,12 +7,8 @@ import (
 	"net/http"
 )
 
-type GetNamespacesQueryParams struct {
-	ConnectionID int64 `queryParam:"style=form,explode=true,name=connectionID"`
-}
-
 type GetNamespacesRequest struct {
-	QueryParams GetNamespacesQueryParams
+	ConnectionID int64 `queryParam:"style=form,explode=true,name=connectionID"`
 }
 
 type GetNamespacesResponse struct {

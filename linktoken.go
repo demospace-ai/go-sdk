@@ -34,7 +34,7 @@ func newLinkToken(defaultClient, securityClient HTTPClient, serverURL, language,
 }
 
 // CreateLinkToken - Create a new link token
-func (s *linkToken) CreateLinkToken(ctx context.Context, request operations.CreateLinkTokenRequest) (*operations.CreateLinkTokenResponse, error) {
+func (s *linkToken) CreateLinkToken(ctx context.Context, request shared.CreateLinkTokenRequest) (*operations.CreateLinkTokenResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/link_token"
 

@@ -7,10 +7,6 @@ import (
 	"net/http"
 )
 
-type CreateSyncRequest struct {
-	Request shared.SyncInput `request:"mediaType=application/json"`
-}
-
 // CreateSync200ApplicationJSON - Successfully created sync
 type CreateSync200ApplicationJSON struct {
 	Sync *shared.Sync `json:"sync,omitempty"`

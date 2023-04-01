@@ -2,6 +2,11 @@
 
 package shared
 
+import (
+	"encoding/json"
+	"fmt"
+)
+
 type ConnectionTypeEnum string
 
 const (
@@ -11,3 +16,25 @@ const (
 	ConnectionTypeEnumMongodb   ConnectionTypeEnum = "mongodb"
 	ConnectionTypeEnumWebhook   ConnectionTypeEnum = "webhook"
 )
+
+func (e *ConnectionTypeEnum) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err != nil {
+		return err
+	}
+	switch s {
+	case "snowflake":
+		fallthrough
+	case "bigquery":
+		fallthrough
+	case "redshift":
+		fallthrough
+	case "mongodb":
+		fallthrough
+	case "webhook":
+		*e = ConnectionTypeEnum(s)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for ConnectionTypeEnum: %s", s)
+	}
+}

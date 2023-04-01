@@ -6,6 +6,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/fabra-io/go-sdk/pkg/models/operations"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"github.com/fabra-io/go-sdk/pkg/utils"
 	"net/http"
 	"strings"
@@ -33,7 +34,7 @@ func newSync(defaultClient, securityClient HTTPClient, serverURL, language, sdkV
 }
 
 // CreateSync - Create a new sync
-func (s *sync) CreateSync(ctx context.Context, request operations.CreateSyncRequest) (*operations.CreateSyncResponse, error) {
+func (s *sync) CreateSync(ctx context.Context, request shared.SyncInput) (*operations.CreateSyncResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/sync"
 

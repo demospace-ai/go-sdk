@@ -6,6 +6,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/fabra-io/go-sdk/pkg/models/operations"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"github.com/fabra-io/go-sdk/pkg/utils"
 	"net/http"
 	"strings"
@@ -33,7 +34,7 @@ func newSource(defaultClient, securityClient HTTPClient, serverURL, language, sd
 }
 
 // CreateSource - Create a new source
-func (s *source) CreateSource(ctx context.Context, request operations.CreateSourceRequest) (*operations.CreateSourceResponse, error) {
+func (s *source) CreateSource(ctx context.Context, request shared.SourceInput) (*operations.CreateSourceResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/source"
 

@@ -6,6 +6,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/fabra-io/go-sdk/pkg/models/operations"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"github.com/fabra-io/go-sdk/pkg/utils"
 	"net/http"
 	"strings"
@@ -33,7 +34,7 @@ func newObject(defaultClient, securityClient HTTPClient, serverURL, language, sd
 }
 
 // CreateObject - Create a new object
-func (s *object) CreateObject(ctx context.Context, request operations.CreateObjectRequest) (*operations.CreateObjectResponse, error) {
+func (s *object) CreateObject(ctx context.Context, request shared.ObjectInput) (*operations.CreateObjectResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/object"
 

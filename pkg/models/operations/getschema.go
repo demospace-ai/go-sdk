@@ -7,14 +7,10 @@ import (
 	"net/http"
 )
 
-type GetSchemaQueryParams struct {
+type GetSchemaRequest struct {
 	ConnectionID int64  `queryParam:"style=form,explode=true,name=connectionID"`
 	Namespace    string `queryParam:"style=form,explode=true,name=namespace"`
 	TableName    string `queryParam:"style=form,explode=true,name=tableName"`
-}
-
-type GetSchemaRequest struct {
-	QueryParams GetSchemaQueryParams
 }
 
 // GetSchema200ApplicationJSON - Successfully fetched schema

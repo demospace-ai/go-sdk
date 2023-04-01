@@ -2,6 +2,11 @@
 
 package shared
 
+import (
+	"encoding/json"
+	"fmt"
+)
+
 type FrequencyUnitsEnum string
 
 const (
@@ -10,3 +15,23 @@ const (
 	FrequencyUnitsEnumDays    FrequencyUnitsEnum = "days"
 	FrequencyUnitsEnumWeeks   FrequencyUnitsEnum = "weeks"
 )
+
+func (e *FrequencyUnitsEnum) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err != nil {
+		return err
+	}
+	switch s {
+	case "minutes":
+		fallthrough
+	case "hours":
+		fallthrough
+	case "days":
+		fallthrough
+	case "weeks":
+		*e = FrequencyUnitsEnum(s)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for FrequencyUnitsEnum: %s", s)
+	}
+}

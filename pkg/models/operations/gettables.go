@@ -6,13 +6,9 @@ import (
 	"net/http"
 )
 
-type GetTablesQueryParams struct {
+type GetTablesRequest struct {
 	ConnectionID int64  `queryParam:"style=form,explode=true,name=connectionID"`
 	Namespace    string `queryParam:"style=form,explode=true,name=namespace"`
-}
-
-type GetTablesRequest struct {
-	QueryParams GetTablesQueryParams
 }
 
 // GetTables200ApplicationJSON - Successfully fetched tables

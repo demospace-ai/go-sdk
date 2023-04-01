@@ -7,10 +7,6 @@ import (
 	"net/http"
 )
 
-type CreateSourceRequest struct {
-	Request shared.SourceInput `request:"mediaType=application/json"`
-}
-
 // CreateSource200ApplicationJSON - Successfully created source
 type CreateSource200ApplicationJSON struct {
 	Source *shared.Source `json:"source,omitempty"`

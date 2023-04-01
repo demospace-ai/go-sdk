@@ -2,6 +2,11 @@
 
 package shared
 
+import (
+	"encoding/json"
+	"fmt"
+)
+
 type FieldTypeEnum string
 
 const (
@@ -11,3 +16,25 @@ const (
 	FieldTypeEnumJSON      FieldTypeEnum = "json"
 	FieldTypeEnumBoolean   FieldTypeEnum = "boolean"
 )
+
+func (e *FieldTypeEnum) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err != nil {
+		return err
+	}
+	switch s {
+	case "string":
+		fallthrough
+	case "integer":
+		fallthrough
+	case "timestamp":
+		fallthrough
+	case "json":
+		fallthrough
+	case "boolean":
+		*e = FieldTypeEnum(s)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for FieldTypeEnum: %s", s)
+	}
+}

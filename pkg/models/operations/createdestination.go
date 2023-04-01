@@ -7,10 +7,6 @@ import (
 	"net/http"
 )
 
-type CreateDestinationRequest struct {
-	Request shared.DestinationInput `request:"mediaType=application/json"`
-}
-
 // CreateDestination200ApplicationJSON - Successfully created destination
 type CreateDestination200ApplicationJSON struct {
 	Destination *shared.Destination `json:"destination,omitempty"`
