@@ -17,6 +17,10 @@ const (
 	ConnectionTypeEnumWebhook   ConnectionTypeEnum = "webhook"
 )
 
+func (e ConnectionTypeEnum) ToPointer() *ConnectionTypeEnum {
+	return &e
+}
+
 func (e *ConnectionTypeEnum) UnmarshalJSON(data []byte) error {
 	var s string
 	if err := json.Unmarshal(data, &s); err != nil {

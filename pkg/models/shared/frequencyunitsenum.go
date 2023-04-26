@@ -16,6 +16,10 @@ const (
 	FrequencyUnitsEnumWeeks   FrequencyUnitsEnum = "weeks"
 )
 
+func (e FrequencyUnitsEnum) ToPointer() *FrequencyUnitsEnum {
+	return &e
+}
+
 func (e *FrequencyUnitsEnum) UnmarshalJSON(data []byte) error {
 	var s string
 	if err := json.Unmarshal(data, &s); err != nil {
