@@ -34,6 +34,7 @@ func newDestination(defaultClient, securityClient HTTPClient, serverURL, languag
 }
 
 // CreateDestination - Create a new destination
+
 func (s *destination) CreateDestination(ctx context.Context, request shared.DestinationInput) (*operations.CreateDestinationResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/destination"
@@ -91,6 +92,7 @@ func (s *destination) CreateDestination(ctx context.Context, request shared.Dest
 }
 
 // GetDestinations - Get all destinations
+
 func (s *destination) GetDestinations(ctx context.Context) (*operations.GetDestinationsResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/destinations"

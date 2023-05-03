@@ -16,12 +16,10 @@ func main() {
         }),
     )
 
-    ctx := context.Background()    
-    req := operations.GetNamespacesRequest{
+    ctx := context.Background()
+    res, err := s.Connection.GetNamespaces(ctx, operations.GetNamespacesRequest{
         ConnectionID: 548814,
-    }
-
-    res, err := s.Connection.GetNamespaces(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }

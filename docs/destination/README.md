@@ -32,8 +32,8 @@ func main() {
         }),
     )
 
-    ctx := context.Background()    
-    req := shared.DestinationInput{
+    ctx := context.Background()
+    res, err := s.Destination.CreateDestination(ctx, shared.DestinationInput{
         BigqueryConfig: &shared.BigQueryConfig{
             Credentials: fabra.String("Paste JSON from GCP"),
             Location: "us-west1",
@@ -61,9 +61,7 @@ func main() {
             Username: "jane_doe",
             WarehouseName: "your_warehouse",
         },
-    }
-
-    res, err := s.Destination.CreateDestination(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }

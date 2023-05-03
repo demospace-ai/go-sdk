@@ -34,6 +34,7 @@ func newConnection(defaultClient, securityClient HTTPClient, serverURL, language
 }
 
 // GetNamespaces - Get all namespaces
+
 func (s *connection) GetNamespaces(ctx context.Context, request operations.GetNamespacesRequest) (*operations.GetNamespacesResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/connection/namespaces"
@@ -85,6 +86,7 @@ func (s *connection) GetNamespaces(ctx context.Context, request operations.GetNa
 }
 
 // GetSchema - Get schema for table
+
 func (s *connection) GetSchema(ctx context.Context, request operations.GetSchemaRequest) (*operations.GetSchemaResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/connection/schema"
@@ -136,6 +138,7 @@ func (s *connection) GetSchema(ctx context.Context, request operations.GetSchema
 }
 
 // GetTables - Get all tables
+
 func (s *connection) GetTables(ctx context.Context, request operations.GetTablesRequest) (*operations.GetTablesResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/connection/tables"

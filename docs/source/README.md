@@ -32,8 +32,8 @@ func main() {
         }),
     )
 
-    ctx := context.Background()    
-    req := shared.SourceInput{
+    ctx := context.Background()
+    res, err := s.Source.CreateSource(ctx, shared.SourceInput{
         BigqueryConfig: &shared.BigQueryConfig{
             Credentials: fabra.String("Paste JSON from GCP"),
             Location: "us-west1",
@@ -62,9 +62,7 @@ func main() {
             Username: "jane_doe",
             WarehouseName: "your_warehouse",
         },
-    }
-
-    res, err := s.Source.CreateSource(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }

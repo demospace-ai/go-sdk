@@ -32,8 +32,8 @@ func main() {
         }),
     )
 
-    ctx := context.Background()    
-    req := shared.SyncInput{
+    ctx := context.Background()
+    res, err := s.Sync.CreateSync(ctx, shared.SyncInput{
         CursorField: fabra.String("updated_at"),
         CustomJoin: fabra.String("select * from events join additional_properties on events.id = additional_properties.event_id;"),
         DestinationID: 2,
@@ -55,9 +55,7 @@ func main() {
         PrimaryKey: fabra.String("event_id"),
         SourceID: 1,
         TableName: fabra.String("end_customer_events"),
-    }
-
-    res, err := s.Sync.CreateSync(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }

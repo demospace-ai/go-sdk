@@ -31,12 +31,10 @@ func main() {
         }),
     )
 
-    ctx := context.Background()    
-    req := shared.CreateLinkTokenRequest{
+    ctx := context.Background()
+    res, err := s.LinkToken.CreateLinkToken(ctx, shared.CreateLinkTokenRequest{
         EndCustomerID: "123",
-    }
-
-    res, err := s.LinkToken.CreateLinkToken(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }

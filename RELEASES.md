@@ -199,3 +199,11 @@ Based on:
 - Speakeasy CLI 1.23.1 (2.21.1) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [Go v0.11.0] https://github.com/fabra-io/go-sdk/releases/tag/v0.11.0 - .
+
+## 2023-05-03 00:29:16
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 https://fabra-io.github.io/docs/openapi.yaml
+- Speakeasy CLI 1.27.0 (2.24.0) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.12.0] https://github.com/fabra-io/go-sdk/releases/tag/v0.12.0 - .

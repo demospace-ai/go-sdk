@@ -34,6 +34,7 @@ func newObject(defaultClient, securityClient HTTPClient, serverURL, language, sd
 }
 
 // CreateObject - Create a new object
+
 func (s *object) CreateObject(ctx context.Context, request shared.ObjectInput) (*operations.CreateObjectResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/object"
@@ -91,6 +92,7 @@ func (s *object) CreateObject(ctx context.Context, request shared.ObjectInput) (
 }
 
 // GetObjects - Get all objects
+
 func (s *object) GetObjects(ctx context.Context) (*operations.GetObjectsResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/objects"

@@ -33,12 +33,10 @@ func main() {
         }),
     )
 
-    ctx := context.Background()    
-    req := operations.GetNamespacesRequest{
+    ctx := context.Background()
+    res, err := s.Connection.GetNamespaces(ctx, operations.GetNamespacesRequest{
         ConnectionID: 592845,
-    }
-
-    res, err := s.Connection.GetNamespaces(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -72,14 +70,12 @@ func main() {
         }),
     )
 
-    ctx := context.Background()    
-    req := operations.GetSchemaRequest{
+    ctx := context.Background()
+    res, err := s.Connection.GetSchema(ctx, operations.GetSchemaRequest{
         ConnectionID: 715190,
         Namespace: "quibusdam",
         TableName: "unde",
-    }
-
-    res, err := s.Connection.GetSchema(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -113,13 +109,11 @@ func main() {
         }),
     )
 
-    ctx := context.Background()    
-    req := operations.GetTablesRequest{
+    ctx := context.Background()
+    res, err := s.Connection.GetTables(ctx, operations.GetTablesRequest{
         ConnectionID: 857946,
         Namespace: "corrupti",
-    }
-
-    res, err := s.Connection.GetTables(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }

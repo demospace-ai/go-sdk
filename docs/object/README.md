@@ -32,8 +32,8 @@ func main() {
         }),
     )
 
-    ctx := context.Background()    
-    req := shared.ObjectInput{
+    ctx := context.Background()
+    res, err := s.Object.CreateObject(ctx, shared.ObjectInput{
         DestinationID: 2,
         DisplayName: "BigQuery",
         EndCustomerIDField: "end_customer_id",
@@ -49,9 +49,7 @@ func main() {
             },
         },
         TableName: "events",
-    }
-
-    res, err := s.Object.CreateObject(ctx, req)
+    })
     if err != nil {
         log.Fatal(err)
     }
