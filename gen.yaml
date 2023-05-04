@@ -9,4 +9,5 @@ generation:
   sdkFlattening: true
 go:
   version: 0.5.2
+  maxMethodParams: 5
   packageName: github.com/fabra-io/go-sdk
