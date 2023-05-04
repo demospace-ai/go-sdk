@@ -2,36 +2,27 @@
 ```go
 package main
 
-import (
-    "context"
-    "log"
-    "github.com/fabra-io/go-sdk"
-    "github.com/fabra-io/go-sdk/pkg/models/shared"
-    "github.com/fabra-io/go-sdk/pkg/models/operations"
+import(
+	"context"
+	"log"
+	"github.com/fabra-io/go-sdk"
+	"github.com/fabra-io/go-sdk/pkg/models/operations"
 )
 
 func main() {
-    s := fabra.New(fabra.WithSecurity(
-        shared.Security{
-            APIKeyAuth: shared.SchemeAPIKeyAuth{
-                APIKey: "YOUR_API_KEY_HERE",
-            },
-        },
-    ))
-    
-    req := operations.GetNamespacesRequest{
-        QueryParams: operations.GetNamespacesQueryParams{
-            ConnectionID: 548814,
-        },
-    }
+    s := fabra.New(
+        fabra.WithSecurity(shared.Security{
+            APIKeyAuth: "YOUR_API_KEY_HERE",
+        }),
+    )
 
     ctx := context.Background()
-    res, err := s.Connection.GetNamespaces(ctx, req)
+    res, err := s.Connection.GetNamespaces(ctx, 548814)
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.GetNamespaces200ApplicationJSONObject != nil {
+    if res.Namespaces != nil {
         // handle response
     }
 }
