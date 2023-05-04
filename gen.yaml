@@ -9,6 +9,7 @@ generation:
   sdkClassName: fabra
   singleTagPerOp: false
 go:
-  version: 0.12.0
-  maxMethodParams: 0
+  version: 0.5.2
+  sdkFlattening: true
+  maxMethodParams: 5
   packageName: github.com/fabra-io/go-sdk
