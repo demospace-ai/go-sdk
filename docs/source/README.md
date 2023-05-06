@@ -40,7 +40,7 @@ func main() {
         },
         ConnectionType: shared.ConnectionTypeEnumBigquery,
         DisplayName: "Frontend Events",
-        EndCustomerID: 123,
+        EndCustomerID: "abcd-1234-efgh-5678",
         MongodbConfig: &shared.MongoDbConfig{
             ConnectionOptions: fabra.String("retryWrites=true&w=majority"),
             Host: "examplecluster.abc123.mongodb.net",

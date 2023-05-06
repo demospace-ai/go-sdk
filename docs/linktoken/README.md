@@ -33,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.LinkToken.CreateLinkToken(ctx, shared.CreateLinkTokenRequest{
-        EndCustomerID: "123",
+        EndCustomerID: "abcd-1234-efgh-5678",
     })
     if err != nil {
         log.Fatal(err)
