@@ -34,7 +34,6 @@ func newConnection(defaultClient, securityClient HTTPClient, serverURL, language
 }
 
 // GetNamespaces - Get all namespaces
-
 func (s *connection) GetNamespaces(ctx context.Context, connectionID int64) (*operations.GetNamespacesResponse, error) {
 	request := operations.GetNamespacesRequest{
 		ConnectionID: connectionID,
@@ -90,7 +89,6 @@ func (s *connection) GetNamespaces(ctx context.Context, connectionID int64) (*op
 }
 
 // GetSchema - Get schema for table
-
 func (s *connection) GetSchema(ctx context.Context, connectionID int64, namespace string, tableName string) (*operations.GetSchemaResponse, error) {
 	request := operations.GetSchemaRequest{
 		ConnectionID: connectionID,
@@ -148,7 +146,6 @@ func (s *connection) GetSchema(ctx context.Context, connectionID int64, namespac
 }
 
 // GetTables - Get all tables
-
 func (s *connection) GetTables(ctx context.Context, connectionID int64, namespace string) (*operations.GetTablesResponse, error) {
 	request := operations.GetTablesRequest{
 		ConnectionID: connectionID,

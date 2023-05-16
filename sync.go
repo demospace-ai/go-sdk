@@ -34,7 +34,6 @@ func newSync(defaultClient, securityClient HTTPClient, serverURL, language, sdkV
 }
 
 // CreateSync - Create a new sync
-
 func (s *sync) CreateSync(ctx context.Context, request shared.SyncInput) (*operations.CreateSyncResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/sync"
@@ -92,7 +91,6 @@ func (s *sync) CreateSync(ctx context.Context, request shared.SyncInput) (*opera
 }
 
 // GetSyncs - Get all syncs
-
 func (s *sync) GetSyncs(ctx context.Context) (*operations.GetSyncsResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/syncs"

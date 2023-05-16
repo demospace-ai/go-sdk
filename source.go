@@ -34,7 +34,6 @@ func newSource(defaultClient, securityClient HTTPClient, serverURL, language, sd
 }
 
 // CreateSource - Create a new source
-
 func (s *source) CreateSource(ctx context.Context, request shared.SourceInput) (*operations.CreateSourceResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/source"
@@ -92,7 +91,6 @@ func (s *source) CreateSource(ctx context.Context, request shared.SourceInput) (
 }
 
 // GetSources - Get all sources
-
 func (s *source) GetSources(ctx context.Context) (*operations.GetSourcesResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/sources"
