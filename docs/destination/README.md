@@ -38,7 +38,7 @@ func main() {
             Credentials: fabra.String("Paste JSON from GCP"),
             Location: "us-west1",
         },
-        ConnectionType: shared.ConnectionTypeEnumWebhook,
+        ConnectionType: shared.ConnectionTypeWebhook,
         DisplayName: "BigQuery",
         MongodbConfig: &shared.MongoDbConfig{
             ConnectionOptions: fabra.String("retryWrites=true&w=majority"),

@@ -49,7 +49,7 @@ func main() {
             },
         },
         Frequency: 30,
-        FrequencyUnits: shared.FrequencyUnitsEnumHours,
+        FrequencyUnits: shared.FrequencyUnitsHours,
         Namespace: fabra.String("end_customer_bigquery_dataset"),
         ObjectID: 3,
         PrimaryKey: fabra.String("event_id"),

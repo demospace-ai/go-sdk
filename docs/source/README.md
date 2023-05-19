@@ -38,7 +38,7 @@ func main() {
             Credentials: fabra.String("Paste JSON from GCP"),
             Location: "us-west1",
         },
-        ConnectionType: shared.ConnectionTypeEnumBigquery,
+        ConnectionType: shared.ConnectionTypeBigquery,
         DisplayName: "Frontend Events",
         EndCustomerID: "abcd-1234-efgh-5678",
         MongodbConfig: &shared.MongoDbConfig{

@@ -41,11 +41,11 @@ func main() {
         ObjectFields: []shared.ObjectField{
             shared.ObjectField{
                 Name: fabra.String("event_name"),
-                Type: shared.FieldTypeEnumJSON.ToPointer(),
+                Type: shared.FieldTypeJSON.ToPointer(),
             },
             shared.ObjectField{
                 Name: fabra.String("event_name"),
-                Type: shared.FieldTypeEnumJSON.ToPointer(),
+                Type: shared.FieldTypeJSON.ToPointer(),
             },
         },
         TableName: "events",

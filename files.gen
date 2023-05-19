@@ -33,10 +33,10 @@ pkg/models/operations/createsync.go
 pkg/models/operations/getsyncs.go
 pkg/models/shared/namespaces.go
 pkg/models/shared/field.go
-pkg/models/shared/fieldtypeenum.go
+pkg/models/shared/fieldtype.go
 pkg/models/shared/destination.go
 pkg/models/shared/connection.go
-pkg/models/shared/connectiontypeenum.go
+pkg/models/shared/connectiontype.go
 pkg/models/shared/destinationinput.go
 pkg/models/shared/snowflakeconfig.go
 pkg/models/shared/redshiftconfig.go
@@ -50,7 +50,7 @@ pkg/models/shared/objectinput.go
 pkg/models/shared/source.go
 pkg/models/shared/sourceinput.go
 pkg/models/shared/sync.go
-pkg/models/shared/frequencyunitsenum.go
+pkg/models/shared/frequencyunits.go
 pkg/models/shared/fieldmapping.go
 pkg/models/shared/syncinput.go
 pkg/models/shared/security.go

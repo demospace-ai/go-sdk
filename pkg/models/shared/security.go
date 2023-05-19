@@ -3,5 +3,5 @@
 package shared
 
 type Security struct {
-	APIKeyAuth string `security:"scheme,type=apiKey,subtype=header,name=X-API-Key"`
+	APIKeyAuth string `security:"scheme,type=apiKey,subtype=header,name=X-API-KEY"`
 }
