@@ -47,10 +47,10 @@ pkg/models/shared/createlinktokenrequest.go
 pkg/models/shared/object.go
 pkg/models/shared/objectfield.go
 pkg/models/shared/objectinput.go
+pkg/models/shared/frequencyunits.go
 pkg/models/shared/source.go
 pkg/models/shared/sourceinput.go
 pkg/models/shared/sync.go
-pkg/models/shared/frequencyunits.go
 pkg/models/shared/fieldmapping.go
 pkg/models/shared/syncinput.go
 pkg/models/shared/security.go

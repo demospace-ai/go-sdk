@@ -7,6 +7,7 @@ type Sync struct {
 	CustomJoin     *string         `json:"custom_join,omitempty"`
 	DestinationID  *int64          `json:"destination_id,omitempty"`
 	DisplayName    *string         `json:"display_name,omitempty"`
+	EndCustomerID  *string         `json:"end_customer_id,omitempty"`
 	FieldMappings  []FieldMapping  `json:"field_mappings,omitempty"`
 	Frequency      *int64          `json:"frequency,omitempty"`
 	FrequencyUnits *FrequencyUnits `json:"frequency_units,omitempty"`

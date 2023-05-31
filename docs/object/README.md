@@ -34,9 +34,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Object.CreateObject(ctx, shared.ObjectInput{
+        CursorField: fabra.String("updated_at"),
         DestinationID: 2,
         DisplayName: "BigQuery",
         EndCustomerIDField: "end_customer_id",
+        Frequency: 30,
+        FrequencyUnits: shared.FrequencyUnitsHours,
         Namespace: "bigquery_dataset",
         ObjectFields: []shared.ObjectField{
             shared.ObjectField{
@@ -45,9 +48,14 @@ func main() {
             },
             shared.ObjectField{
                 Name: fabra.String("event_name"),
-                Type: shared.FieldTypeJSON.ToPointer(),
+                Type: shared.FieldTypeInteger.ToPointer(),
+            },
+            shared.ObjectField{
+                Name: fabra.String("event_name"),
+                Type: shared.FieldTypeTimestamp.ToPointer(),
             },
         },
+        PrimaryKey: fabra.String("event_id"),
         TableName: "events",
     })
     if err != nil {

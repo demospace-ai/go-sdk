@@ -38,6 +38,7 @@ func main() {
         CustomJoin: fabra.String("select * from events join additional_properties on events.id = additional_properties.event_id;"),
         DestinationID: 2,
         DisplayName: "Event Sync",
+        EndCustomerID: "abc123",
         FieldMappings: []shared.FieldMapping{
             shared.FieldMapping{
                 DestinationFieldName: fabra.String("event"),
@@ -47,9 +48,17 @@ func main() {
                 DestinationFieldName: fabra.String("event"),
                 SourceFieldName: fabra.String("event_name"),
             },
+            shared.FieldMapping{
+                DestinationFieldName: fabra.String("event"),
+                SourceFieldName: fabra.String("event_name"),
+            },
+            shared.FieldMapping{
+                DestinationFieldName: fabra.String("event"),
+                SourceFieldName: fabra.String("event_name"),
+            },
         },
-        Frequency: 30,
-        FrequencyUnits: shared.FrequencyUnitsHours,
+        Frequency: fabra.Int64(30),
+        FrequencyUnits: shared.FrequencyUnitsMinutes.ToPointer(),
         Namespace: fabra.String("end_customer_bigquery_dataset"),
         ObjectID: 3,
         PrimaryKey: fabra.String("event_id"),
