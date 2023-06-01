@@ -5,6 +5,7 @@ object.go
 source.go
 sync.go
 fabra.go
+.gitignore
 go.mod
 go.sum
 pkg/types/bigint.go
