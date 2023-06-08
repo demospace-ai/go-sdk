@@ -28,7 +28,7 @@ import(
 func main() {
     s := fabra.New(
         fabra.WithSecurity(shared.Security{
-            APIKeyAuth: "YOUR_API_KEY_HERE",
+            APIKeyAuth: "",
         }),
     )
 
@@ -91,7 +91,7 @@ import(
 func main() {
     s := fabra.New(
         fabra.WithSecurity(shared.Security{
-            APIKeyAuth: "YOUR_API_KEY_HERE",
+            APIKeyAuth: "",
         }),
     )
 
