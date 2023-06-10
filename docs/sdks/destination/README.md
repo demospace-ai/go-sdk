@@ -72,6 +72,19 @@ func main() {
 }
 ```
 
+### Parameters
+
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `ctx`                                                              | [context.Context](https://pkg.go.dev/context#Context)              | :heavy_check_mark:                                                 | The context to use for the request.                                |
+| `request`                                                          | [shared.DestinationInput](../../models/shared/destinationinput.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
+
+
+### Response
+
+**[*operations.CreateDestinationResponse](../../models/operations/createdestinationresponse.md), error**
+
+
 ## GetDestinations
 
 Get all destinations
@@ -105,3 +118,15 @@ func main() {
     }
 }
 ```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+
+
+### Response
+
+**[*operations.GetDestinationsResponse](../../models/operations/getdestinationsresponse.md), error**
+

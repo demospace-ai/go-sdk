@@ -75,6 +75,19 @@ func main() {
 }
 ```
 
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `request`                                             | [shared.SyncInput](../../models/shared/syncinput.md)  | :heavy_check_mark:                                    | The request object to use for the request.            |
+
+
+### Response
+
+**[*operations.CreateSyncResponse](../../models/operations/createsyncresponse.md), error**
+
+
 ## GetSyncs
 
 Get all syncs
@@ -108,3 +121,15 @@ func main() {
     }
 }
 ```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+
+
+### Response
+
+**[*operations.GetSyncsResponse](../../models/operations/getsyncsresponse.md), error**
+
