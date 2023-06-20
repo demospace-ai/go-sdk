@@ -61,7 +61,8 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 // Fabra
 type Fabra struct {
 	// Connection - Operations on connections
-	Connection *connection
+	Connection   *connection
+	CustomerData *customerData
 	// Destination - Operations on destinations
 	Destination *destination
 	// LinkToken - Operations on link tokens
@@ -127,8 +128,8 @@ func New(opts ...SDKOption) *Fabra {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0",
-			SDKVersion:        "0.12.0",
-			GenVersion:        "2.39.0",
+			SDKVersion:        "0.13.0",
+			GenVersion:        "2.41.4",
 		},
 	}
 	for _, opt := range opts {
@@ -148,6 +149,8 @@ func New(opts ...SDKOption) *Fabra {
 	}
 
 	sdk.Connection = newConnection(sdk.sdkConfiguration)
+
+	sdk.CustomerData = newCustomerData(sdk.sdkConfiguration)
 
 	sdk.Destination = newDestination(sdk.sdkConfiguration)
 

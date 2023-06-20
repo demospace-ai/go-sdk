@@ -56,6 +56,10 @@ func main() {
 * [GetSchema](docs/sdks/connection/README.md#getschema) - Get schema for table
 * [GetTables](docs/sdks/connection/README.md#gettables) - Get all tables
 
+### [CustomerData](docs/sdks/customerdata/README.md)
+
+* [QueryObject](docs/sdks/customerdata/README.md#queryobject) - Query object record for customer
+
 ### [Destination](docs/sdks/destination/README.md)
 
 * [CreateDestination](docs/sdks/destination/README.md#createdestination) - Create a new destination

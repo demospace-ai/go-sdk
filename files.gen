@@ -1,11 +1,11 @@
 connection.go
+customerdata.go
 destination.go
 linktoken.go
 object.go
 source.go
 sync.go
 fabra.go
-.gitignore
 go.mod
 go.sum
 pkg/types/bigint.go
@@ -23,6 +23,7 @@ pkg/utils/utils.go
 pkg/models/operations/getnamespaces.go
 pkg/models/operations/getschema.go
 pkg/models/operations/gettables.go
+pkg/models/operations/queryobject.go
 pkg/models/operations/createdestination.go
 pkg/models/operations/getdestinations.go
 pkg/models/operations/createlinktoken.go
@@ -35,6 +36,7 @@ pkg/models/operations/getsyncs.go
 pkg/models/shared/namespaces.go
 pkg/models/shared/field.go
 pkg/models/shared/fieldtype.go
+pkg/models/shared/queryfilter.go
 pkg/models/shared/destination.go
 pkg/models/shared/connection.go
 pkg/models/shared/connectiontype.go
@@ -57,6 +59,7 @@ pkg/models/shared/syncinput.go
 pkg/models/shared/security.go
 docs/sdks/fabra/README.md
 docs/sdks/connection/README.md
+docs/sdks/customerdata/README.md
 docs/sdks/destination/README.md
 docs/sdks/linktoken/README.md
 docs/sdks/object/README.md
@@ -71,6 +74,11 @@ docs/models/operations/getschemaresponse.md
 docs/models/operations/gettablesrequest.md
 docs/models/operations/gettables200applicationjson.md
 docs/models/operations/gettablesresponse.md
+docs/models/operations/queryobjectrequestbody.md
+docs/models/operations/queryobjectrequest.md
+docs/models/operations/queryobject200applicationjsonexamplefield3.md
+docs/models/operations/queryobject200applicationjson.md
+docs/models/operations/queryobjectresponse.md
 docs/models/operations/createdestination200applicationjson.md
 docs/models/operations/createdestinationresponse.md
 docs/models/operations/getdestinations200applicationjson.md
@@ -91,6 +99,7 @@ docs/models/operations/getsyncsresponse.md
 docs/models/shared/namespaces.md
 docs/models/shared/field.md
 docs/models/shared/fieldtype.md
+docs/models/shared/queryfilter.md
 docs/models/shared/destination.md
 docs/models/shared/connection.md
 docs/models/shared/connectiontype.md

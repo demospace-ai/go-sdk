@@ -44,15 +44,11 @@ func main() {
         ObjectFields: []shared.ObjectField{
             shared.ObjectField{
                 Name: fabra.String("event_name"),
-                Type: shared.FieldTypeJSON.ToPointer(),
-            },
-            shared.ObjectField{
-                Name: fabra.String("event_name"),
                 Type: shared.FieldTypeInteger.ToPointer(),
             },
             shared.ObjectField{
                 Name: fabra.String("event_name"),
-                Type: shared.FieldTypeTimestamp.ToPointer(),
+                Type: shared.FieldTypeBoolean.ToPointer(),
             },
         },
         PrimaryKey: fabra.String("event_id"),
