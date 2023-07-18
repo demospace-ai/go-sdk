@@ -12,3 +12,52 @@ type Object struct {
 	ObjectFields       []ObjectField `json:"object_fields,omitempty"`
 	TableName          *string       `json:"table_name,omitempty"`
 }
+
+func (o *Object) GetDestinationID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.DestinationID
+}
+
+func (o *Object) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *Object) GetEndCustomerIDField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EndCustomerIDField
+}
+
+func (o *Object) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *Object) GetNamespace() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Namespace
+}
+
+func (o *Object) GetObjectFields() []ObjectField {
+	if o == nil {
+		return nil
+	}
+	return o.ObjectFields
+}
+
+func (o *Object) GetTableName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TableName
+}

@@ -7,6 +7,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/fabra-io/go-sdk/pkg/models/operations"
+	"github.com/fabra-io/go-sdk/pkg/models/sdkerrors"
 	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"github.com/fabra-io/go-sdk/pkg/utils"
 	"io"
@@ -79,6 +80,8 @@ func (s *connection) GetNamespaces(ctx context.Context, connectionID int64) (*op
 			}
 
 			res.Namespaces = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
@@ -144,6 +147,8 @@ func (s *connection) GetSchema(ctx context.Context, connectionID int64, namespac
 			}
 
 			res.GetSchema200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
@@ -208,6 +213,8 @@ func (s *connection) GetTables(ctx context.Context, connectionID int64, namespac
 			}
 
 			res.GetTables200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough

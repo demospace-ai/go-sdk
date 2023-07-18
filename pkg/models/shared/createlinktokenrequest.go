@@ -5,3 +5,10 @@ package shared
 type CreateLinkTokenRequest struct {
 	EndCustomerID string `json:"end_customer_id"`
 }
+
+func (o *CreateLinkTokenRequest) GetEndCustomerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.EndCustomerID
+}

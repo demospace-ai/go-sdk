@@ -10,3 +10,45 @@ type DestinationInput struct {
 	RedshiftConfig  *RedshiftConfig  `json:"redshift_config,omitempty"`
 	SnowflakeConfig *SnowflakeConfig `json:"snowflake_config,omitempty"`
 }
+
+func (o *DestinationInput) GetBigqueryConfig() *BigQueryConfig {
+	if o == nil {
+		return nil
+	}
+	return o.BigqueryConfig
+}
+
+func (o *DestinationInput) GetConnectionType() ConnectionType {
+	if o == nil {
+		return ConnectionType("")
+	}
+	return o.ConnectionType
+}
+
+func (o *DestinationInput) GetDisplayName() string {
+	if o == nil {
+		return ""
+	}
+	return o.DisplayName
+}
+
+func (o *DestinationInput) GetMongodbConfig() *MongoDbConfig {
+	if o == nil {
+		return nil
+	}
+	return o.MongodbConfig
+}
+
+func (o *DestinationInput) GetRedshiftConfig() *RedshiftConfig {
+	if o == nil {
+		return nil
+	}
+	return o.RedshiftConfig
+}
+
+func (o *DestinationInput) GetSnowflakeConfig() *SnowflakeConfig {
+	if o == nil {
+		return nil
+	}
+	return o.SnowflakeConfig
+}

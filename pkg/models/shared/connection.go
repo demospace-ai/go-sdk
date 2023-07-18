@@ -6,3 +6,17 @@ type Connection struct {
 	ConnectionType *ConnectionType `json:"connection_type,omitempty"`
 	ID             *int64          `json:"id,omitempty"`
 }
+
+func (o *Connection) GetConnectionType() *ConnectionType {
+	if o == nil {
+		return nil
+	}
+	return o.ConnectionType
+}
+
+func (o *Connection) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}

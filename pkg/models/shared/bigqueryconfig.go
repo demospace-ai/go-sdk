@@ -6,3 +6,17 @@ type BigQueryConfig struct {
 	Credentials *string `json:"credentials,omitempty"`
 	Location    string  `json:"location"`
 }
+
+func (o *BigQueryConfig) GetCredentials() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Credentials
+}
+
+func (o *BigQueryConfig) GetLocation() string {
+	if o == nil {
+		return ""
+	}
+	return o.Location
+}

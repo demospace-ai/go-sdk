@@ -15,3 +15,73 @@ type ObjectInput struct {
 	PrimaryKey         *string        `json:"primary_key,omitempty"`
 	TableName          string         `json:"table_name"`
 }
+
+func (o *ObjectInput) GetCursorField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CursorField
+}
+
+func (o *ObjectInput) GetDestinationID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.DestinationID
+}
+
+func (o *ObjectInput) GetDisplayName() string {
+	if o == nil {
+		return ""
+	}
+	return o.DisplayName
+}
+
+func (o *ObjectInput) GetEndCustomerIDField() string {
+	if o == nil {
+		return ""
+	}
+	return o.EndCustomerIDField
+}
+
+func (o *ObjectInput) GetFrequency() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Frequency
+}
+
+func (o *ObjectInput) GetFrequencyUnits() FrequencyUnits {
+	if o == nil {
+		return FrequencyUnits("")
+	}
+	return o.FrequencyUnits
+}
+
+func (o *ObjectInput) GetNamespace() string {
+	if o == nil {
+		return ""
+	}
+	return o.Namespace
+}
+
+func (o *ObjectInput) GetObjectFields() []ObjectField {
+	if o == nil {
+		return nil
+	}
+	return o.ObjectFields
+}
+
+func (o *ObjectInput) GetPrimaryKey() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PrimaryKey
+}
+
+func (o *ObjectInput) GetTableName() string {
+	if o == nil {
+		return ""
+	}
+	return o.TableName
+}

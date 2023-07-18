@@ -11,15 +11,57 @@ type QueryObjectRequestBody struct {
 	Filters []shared.QueryFilter `json:"filters,omitempty"`
 }
 
+func (o *QueryObjectRequestBody) GetFilters() []shared.QueryFilter {
+	if o == nil {
+		return nil
+	}
+	return o.Filters
+}
+
 type QueryObjectRequest struct {
 	EndCustomerID string                  `pathParam:"style=simple,explode=false,name=endCustomerID"`
 	ObjectID      int64                   `pathParam:"style=simple,explode=false,name=objectID"`
 	RequestBody   *QueryObjectRequestBody `request:"mediaType=application/json"`
 }
 
+func (o *QueryObjectRequest) GetEndCustomerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.EndCustomerID
+}
+
+func (o *QueryObjectRequest) GetObjectID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.ObjectID
+}
+
+func (o *QueryObjectRequest) GetRequestBody() *QueryObjectRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
 type QueryObject200ApplicationJSONExampleField3 struct {
 	NestedField1 *string `json:"nested_field_1,omitempty"`
 	NestedField2 *int64  `json:"nested_field_2,omitempty"`
+}
+
+func (o *QueryObject200ApplicationJSONExampleField3) GetNestedField1() *string {
+	if o == nil {
+		return nil
+	}
+	return o.NestedField1
+}
+
+func (o *QueryObject200ApplicationJSONExampleField3) GetNestedField2() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.NestedField2
 }
 
 // QueryObject200ApplicationJSON - The response payload will match the schema you defined when creating the object
@@ -29,10 +71,59 @@ type QueryObject200ApplicationJSON struct {
 	ExampleField3 *QueryObject200ApplicationJSONExampleField3 `json:"example_field_3,omitempty"`
 }
 
+func (o *QueryObject200ApplicationJSON) GetExampleField1() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ExampleField1
+}
+
+func (o *QueryObject200ApplicationJSON) GetExampleField2() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ExampleField2
+}
+
+func (o *QueryObject200ApplicationJSON) GetExampleField3() *QueryObject200ApplicationJSONExampleField3 {
+	if o == nil {
+		return nil
+	}
+	return o.ExampleField3
+}
+
 type QueryObjectResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
 	// The response payload will match the schema you defined when creating the object
 	QueryObject200ApplicationJSONObject *QueryObject200ApplicationJSON
+}
+
+func (o *QueryObjectResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *QueryObjectResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *QueryObjectResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *QueryObjectResponse) GetQueryObject200ApplicationJSONObject() *QueryObject200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.QueryObject200ApplicationJSONObject
 }

@@ -7,6 +7,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/fabra-io/go-sdk/pkg/models/operations"
+	"github.com/fabra-io/go-sdk/pkg/models/sdkerrors"
 	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"github.com/fabra-io/go-sdk/pkg/utils"
 	"io"
@@ -81,6 +82,8 @@ func (s *source) CreateSource(ctx context.Context, request shared.SourceInput) (
 			}
 
 			res.CreateSource200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
@@ -136,6 +139,8 @@ func (s *source) GetSources(ctx context.Context) (*operations.GetSourcesResponse
 			}
 
 			res.GetSources200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough

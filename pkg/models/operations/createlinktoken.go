@@ -14,3 +14,31 @@ type CreateLinkTokenResponse struct {
 	StatusCode              int
 	RawResponse             *http.Response
 }
+
+func (o *CreateLinkTokenResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateLinkTokenResponse) GetCreateLinkTokenResponse() *shared.CreateLinkTokenResponse {
+	if o == nil {
+		return nil
+	}
+	return o.CreateLinkTokenResponse
+}
+
+func (o *CreateLinkTokenResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateLinkTokenResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}

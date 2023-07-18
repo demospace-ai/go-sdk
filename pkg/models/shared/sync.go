@@ -18,3 +18,101 @@ type Sync struct {
 	SourceID       *int64          `json:"source_id,omitempty"`
 	TableName      *string         `json:"table_name,omitempty"`
 }
+
+func (o *Sync) GetCursorField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CursorField
+}
+
+func (o *Sync) GetCustomJoin() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomJoin
+}
+
+func (o *Sync) GetDestinationID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.DestinationID
+}
+
+func (o *Sync) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *Sync) GetEndCustomerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EndCustomerID
+}
+
+func (o *Sync) GetFieldMappings() []FieldMapping {
+	if o == nil {
+		return nil
+	}
+	return o.FieldMappings
+}
+
+func (o *Sync) GetFrequency() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Frequency
+}
+
+func (o *Sync) GetFrequencyUnits() *FrequencyUnits {
+	if o == nil {
+		return nil
+	}
+	return o.FrequencyUnits
+}
+
+func (o *Sync) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *Sync) GetNamespace() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Namespace
+}
+
+func (o *Sync) GetObjectID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ObjectID
+}
+
+func (o *Sync) GetPrimaryKey() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PrimaryKey
+}
+
+func (o *Sync) GetSourceID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.SourceID
+}
+
+func (o *Sync) GetTableName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TableName
+}

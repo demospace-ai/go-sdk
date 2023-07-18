@@ -6,3 +6,17 @@ type QueryFilter struct {
 	FieldName  string `json:"field_name"`
 	FieldValue string `json:"field_value"`
 }
+
+func (o *QueryFilter) GetFieldName() string {
+	if o == nil {
+		return ""
+	}
+	return o.FieldName
+}
+
+func (o *QueryFilter) GetFieldValue() string {
+	if o == nil {
+		return ""
+	}
+	return o.FieldValue
+}

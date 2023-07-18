@@ -17,3 +17,94 @@ type SyncInput struct {
 	SourceID       int64           `json:"source_id"`
 	TableName      *string         `json:"table_name,omitempty"`
 }
+
+func (o *SyncInput) GetCursorField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CursorField
+}
+
+func (o *SyncInput) GetCustomJoin() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomJoin
+}
+
+func (o *SyncInput) GetDestinationID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.DestinationID
+}
+
+func (o *SyncInput) GetDisplayName() string {
+	if o == nil {
+		return ""
+	}
+	return o.DisplayName
+}
+
+func (o *SyncInput) GetEndCustomerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.EndCustomerID
+}
+
+func (o *SyncInput) GetFieldMappings() []FieldMapping {
+	if o == nil {
+		return []FieldMapping{}
+	}
+	return o.FieldMappings
+}
+
+func (o *SyncInput) GetFrequency() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Frequency
+}
+
+func (o *SyncInput) GetFrequencyUnits() *FrequencyUnits {
+	if o == nil {
+		return nil
+	}
+	return o.FrequencyUnits
+}
+
+func (o *SyncInput) GetNamespace() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Namespace
+}
+
+func (o *SyncInput) GetObjectID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.ObjectID
+}
+
+func (o *SyncInput) GetPrimaryKey() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PrimaryKey
+}
+
+func (o *SyncInput) GetSourceID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.SourceID
+}
+
+func (o *SyncInput) GetTableName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TableName
+}

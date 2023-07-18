@@ -7,6 +7,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/fabra-io/go-sdk/pkg/models/operations"
+	"github.com/fabra-io/go-sdk/pkg/models/sdkerrors"
 	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"github.com/fabra-io/go-sdk/pkg/utils"
 	"io"
@@ -81,6 +82,8 @@ func (s *sync) CreateSync(ctx context.Context, request shared.SyncInput) (*opera
 			}
 
 			res.CreateSync200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
@@ -136,6 +139,8 @@ func (s *sync) GetSyncs(ctx context.Context) (*operations.GetSyncsResponse, erro
 			}
 
 			res.GetSyncs200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough

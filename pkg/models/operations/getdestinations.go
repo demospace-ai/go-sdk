@@ -12,10 +12,45 @@ type GetDestinations200ApplicationJSON struct {
 	Destinations []shared.Destination `json:"destinations,omitempty"`
 }
 
+func (o *GetDestinations200ApplicationJSON) GetDestinations() []shared.Destination {
+	if o == nil {
+		return nil
+	}
+	return o.Destinations
+}
+
 type GetDestinationsResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
 	// Successfully fetched destinations
 	GetDestinations200ApplicationJSONObject *GetDestinations200ApplicationJSON
+}
+
+func (o *GetDestinationsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetDestinationsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetDestinationsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetDestinationsResponse) GetGetDestinations200ApplicationJSONObject() *GetDestinations200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetDestinations200ApplicationJSONObject
 }
