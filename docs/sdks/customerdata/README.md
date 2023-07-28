@@ -27,9 +27,9 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.CustomerData.QueryObject(ctx, "illum", 423655, &operations.QueryObjectRequestBody{
+    endCustomerID := "illum"
+    objectID := 423655
+    requestBody := &operations.QueryObjectRequestBody{
         Filters: []shared.QueryFilter{
             shared.QueryFilter{
                 FieldName: "user_id",
@@ -44,7 +44,10 @@ func main() {
                 FieldValue: "2",
             },
         },
-    })
+    }
+
+    ctx := context.Background()
+    res, err := s.CustomerData.QueryObject(ctx, endCustomerID, objectID, requestBody)
     if err != nil {
         log.Fatal(err)
     }

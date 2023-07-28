@@ -33,9 +33,10 @@ func main() {
             APIKeyAuth: "",
         }),
     )
+    connectionID := 592845
 
     ctx := context.Background()
-    res, err := s.Connection.GetNamespaces(ctx, 592845)
+    res, err := s.Connection.GetNamespaces(ctx, connectionID)
     if err != nil {
         log.Fatal(err)
     }
@@ -82,9 +83,12 @@ func main() {
             APIKeyAuth: "",
         }),
     )
+    connectionID := 715190
+    namespace := "quibusdam"
+    tableName := "unde"
 
     ctx := context.Background()
-    res, err := s.Connection.GetSchema(ctx, 715190, "quibusdam", "unde")
+    res, err := s.Connection.GetSchema(ctx, connectionID, namespace, tableName)
     if err != nil {
         log.Fatal(err)
     }
@@ -133,9 +137,11 @@ func main() {
             APIKeyAuth: "",
         }),
     )
+    connectionID := 857946
+    namespace := "corrupti"
 
     ctx := context.Background()
-    res, err := s.Connection.GetTables(ctx, 857946, "corrupti")
+    res, err := s.Connection.GetTables(ctx, connectionID, namespace)
     if err != nil {
         log.Fatal(err)
     }

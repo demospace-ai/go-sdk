@@ -18,9 +18,10 @@ func main() {
             APIKeyAuth: "",
         }),
     )
+    connectionID := 548814
 
     ctx := context.Background()
-    res, err := s.Connection.GetNamespaces(ctx, 548814)
+    res, err := s.Connection.GetNamespaces(ctx, connectionID)
     if err != nil {
         log.Fatal(err)
     }
