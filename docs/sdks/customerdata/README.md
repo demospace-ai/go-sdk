@@ -35,14 +35,6 @@ func main() {
                 FieldName: "user_id",
                 FieldValue: "2",
             },
-            shared.QueryFilter{
-                FieldName: "user_id",
-                FieldValue: "2",
-            },
-            shared.QueryFilter{
-                FieldName: "user_id",
-                FieldValue: "2",
-            },
         },
     }
 

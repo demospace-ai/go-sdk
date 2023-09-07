@@ -44,18 +44,6 @@ func main() {
                 DestinationFieldName: fabra.String("event"),
                 SourceFieldName: fabra.String("event_name"),
             },
-            shared.FieldMapping{
-                DestinationFieldName: fabra.String("event"),
-                SourceFieldName: fabra.String("event_name"),
-            },
-            shared.FieldMapping{
-                DestinationFieldName: fabra.String("event"),
-                SourceFieldName: fabra.String("event_name"),
-            },
-            shared.FieldMapping{
-                DestinationFieldName: fabra.String("event"),
-                SourceFieldName: fabra.String("event_name"),
-            },
         },
         Frequency: fabra.Int64(30),
         FrequencyUnits: shared.FrequencyUnitsHours.ToPointer(),

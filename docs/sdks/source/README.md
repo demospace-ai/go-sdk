@@ -38,7 +38,7 @@ func main() {
             Credentials: fabra.String("Paste JSON from GCP"),
             Location: "us-west1",
         },
-        ConnectionType: shared.ConnectionTypeSnowflake,
+        ConnectionType: shared.ConnectionTypeRedshift,
         DisplayName: "Frontend Events",
         EndCustomerID: "abcd-1234-efgh-5678",
         MongodbConfig: &shared.MongoDbConfig{

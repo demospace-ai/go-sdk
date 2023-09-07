@@ -58,20 +58,19 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 	return ServerList[c.ServerIndex], nil
 }
 
-// Fabra
 type Fabra struct {
-	// Connection - Operations on connections
+	// Operations on connections
 	Connection   *connection
 	CustomerData *customerData
-	// Destination - Operations on destinations
+	// Operations on destinations
 	Destination *destination
-	// LinkToken - Operations on link tokens
+	// Operations on link tokens
 	LinkToken *linkToken
-	// Object - Operations on objects
+	// Operations on objects
 	Object *object
-	// Source - Operations on sources
+	// Operations on sources
 	Source *source
-	// Sync - Operations on syncs
+	// Operations on syncs
 	Sync *sync
 
 	sdkConfiguration sdkConfiguration
@@ -128,8 +127,8 @@ func New(opts ...SDKOption) *Fabra {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0",
-			SDKVersion:        "0.16.0",
-			GenVersion:        "2.89.1",
+			SDKVersion:        "0.17.0",
+			GenVersion:        "2.101.0",
 		},
 	}
 	for _, opt := range opts {

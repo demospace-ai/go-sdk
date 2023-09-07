@@ -39,16 +39,12 @@ func main() {
         DisplayName: "BigQuery",
         EndCustomerIDField: "end_customer_id",
         Frequency: 30,
-        FrequencyUnits: shared.FrequencyUnitsHours,
+        FrequencyUnits: shared.FrequencyUnitsDays,
         Namespace: "bigquery_dataset",
         ObjectFields: []shared.ObjectField{
             shared.ObjectField{
                 Name: fabra.String("event_name"),
                 Type: shared.FieldTypeInteger.ToPointer(),
-            },
-            shared.ObjectField{
-                Name: fabra.String("event_name"),
-                Type: shared.FieldTypeBoolean.ToPointer(),
             },
         },
         PrimaryKey: fabra.String("event_id"),
