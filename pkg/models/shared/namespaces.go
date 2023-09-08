@@ -2,7 +2,6 @@
 
 package shared
 
-// Namespaces - Successfully fetched namespaces
 type Namespaces struct {
 	Namespaces []string `json:"namespaces,omitempty"`
 }

@@ -1,7 +1,5 @@
 # Namespaces
 
-Successfully fetched namespaces
-
 
 ## Fields
 

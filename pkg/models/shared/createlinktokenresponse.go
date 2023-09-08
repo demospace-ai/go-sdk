@@ -2,7 +2,6 @@
 
 package shared
 
-// CreateLinkTokenResponse - Successfully created link token
 type CreateLinkTokenResponse struct {
 	LinkToken *string `json:"link_token,omitempty"`
 }

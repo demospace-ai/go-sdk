@@ -1,7 +1,5 @@
 # CreateLinkTokenResponse
 
-Successfully created link token
-
 
 ## Fields
 
