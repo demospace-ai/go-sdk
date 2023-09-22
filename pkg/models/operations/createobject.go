@@ -12,10 +12,45 @@ type CreateObject200ApplicationJSON struct {
 	Object *shared.Object `json:"object,omitempty"`
 }
 
+func (o *CreateObject200ApplicationJSON) GetObject() *shared.Object {
+	if o == nil {
+		return nil
+	}
+	return o.Object
+}
+
 type CreateObjectResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
 	// Successfully created object
 	CreateObject200ApplicationJSONObject *CreateObject200ApplicationJSON
+}
+
+func (o *CreateObjectResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateObjectResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateObjectResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *CreateObjectResponse) GetCreateObject200ApplicationJSONObject() *CreateObject200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateObject200ApplicationJSONObject
 }

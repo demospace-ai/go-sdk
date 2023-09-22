@@ -1,0 +1,14 @@
+# SourceInput
+
+
+## Fields
+
+| Field                                                      | Type                                                       | Required                                                   | Description                                                | Example                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `BigqueryConfig`                                           | [*BigQueryConfig](../../models/shared/bigqueryconfig.md)   | :heavy_minus_sign:                                         | N/A                                                        |                                                            |
+| `ConnectionType`                                           | [ConnectionType](../../models/shared/connectiontype.md)    | :heavy_check_mark:                                         | N/A                                                        |                                                            |
+| `DisplayName`                                              | *string*                                                   | :heavy_check_mark:                                         | N/A                                                        | Frontend Events                                            |
+| `EndCustomerID`                                            | *string*                                                   | :heavy_check_mark:                                         | N/A                                                        | abcd-1234-efgh-5678                                        |
+| `MongodbConfig`                                            | [*MongoDbConfig](../../models/shared/mongodbconfig.md)     | :heavy_minus_sign:                                         | N/A                                                        |                                                            |
+| `RedshiftConfig`                                           | [*RedshiftConfig](../../models/shared/redshiftconfig.md)   | :heavy_minus_sign:                                         | N/A                                                        |                                                            |
+| `SnowflakeConfig`                                          | [*SnowflakeConfig](../../models/shared/snowflakeconfig.md) | :heavy_minus_sign:                                         | N/A                                                        |                                                            |

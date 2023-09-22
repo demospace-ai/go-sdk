@@ -3,17 +3,116 @@
 package shared
 
 type Sync struct {
-	CursorField    *string             `json:"cursor_field,omitempty"`
-	CustomJoin     *string             `json:"custom_join,omitempty"`
-	DestinationID  *int64              `json:"destination_id,omitempty"`
-	DisplayName    *string             `json:"display_name,omitempty"`
-	FieldMappings  []FieldMapping      `json:"field_mappings,omitempty"`
-	Frequency      *int64              `json:"frequency,omitempty"`
-	FrequencyUnits *FrequencyUnitsEnum `json:"frequency_units,omitempty"`
-	ID             *int64              `json:"id,omitempty"`
-	Namespace      *string             `json:"namespace,omitempty"`
-	ObjectID       *int64              `json:"object_id,omitempty"`
-	PrimaryKey     *string             `json:"primary_key,omitempty"`
-	SourceID       *int64              `json:"source_id,omitempty"`
-	TableName      *string             `json:"table_name,omitempty"`
+	CursorField    *string         `json:"cursor_field,omitempty"`
+	CustomJoin     *string         `json:"custom_join,omitempty"`
+	DestinationID  *int64          `json:"destination_id,omitempty"`
+	DisplayName    *string         `json:"display_name,omitempty"`
+	EndCustomerID  *string         `json:"end_customer_id,omitempty"`
+	FieldMappings  []FieldMapping  `json:"field_mappings,omitempty"`
+	Frequency      *int64          `json:"frequency,omitempty"`
+	FrequencyUnits *FrequencyUnits `json:"frequency_units,omitempty"`
+	ID             *int64          `json:"id,omitempty"`
+	Namespace      *string         `json:"namespace,omitempty"`
+	ObjectID       *int64          `json:"object_id,omitempty"`
+	PrimaryKey     *string         `json:"primary_key,omitempty"`
+	SourceID       *int64          `json:"source_id,omitempty"`
+	TableName      *string         `json:"table_name,omitempty"`
+}
+
+func (o *Sync) GetCursorField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CursorField
+}
+
+func (o *Sync) GetCustomJoin() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomJoin
+}
+
+func (o *Sync) GetDestinationID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.DestinationID
+}
+
+func (o *Sync) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *Sync) GetEndCustomerID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EndCustomerID
+}
+
+func (o *Sync) GetFieldMappings() []FieldMapping {
+	if o == nil {
+		return nil
+	}
+	return o.FieldMappings
+}
+
+func (o *Sync) GetFrequency() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Frequency
+}
+
+func (o *Sync) GetFrequencyUnits() *FrequencyUnits {
+	if o == nil {
+		return nil
+	}
+	return o.FrequencyUnits
+}
+
+func (o *Sync) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *Sync) GetNamespace() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Namespace
+}
+
+func (o *Sync) GetObjectID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ObjectID
+}
+
+func (o *Sync) GetPrimaryKey() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PrimaryKey
+}
+
+func (o *Sync) GetSourceID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.SourceID
+}
+
+func (o *Sync) GetTableName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TableName
 }

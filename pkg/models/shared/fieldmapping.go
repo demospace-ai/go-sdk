@@ -6,3 +6,17 @@ type FieldMapping struct {
 	DestinationFieldName *string `json:"destination_field_name,omitempty"`
 	SourceFieldName      *string `json:"source_field_name,omitempty"`
 }
+
+func (o *FieldMapping) GetDestinationFieldName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DestinationFieldName
+}
+
+func (o *FieldMapping) GetSourceFieldName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SourceFieldName
+}

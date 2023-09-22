@@ -1,23 +1,27 @@
 <!-- Start SDK Example Usage -->
+
+
 ```go
 package main
 
 import(
 	"context"
 	"log"
-	"github.com/fabra-io/go-sdk"
+	gosdk "github.com/fabra-io/go-sdk"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"github.com/fabra-io/go-sdk/pkg/models/operations"
 )
 
 func main() {
-    s := fabra.New(
-        fabra.WithSecurity(shared.Security{
-            APIKeyAuth: "YOUR_API_KEY_HERE",
+    s := gosdk.New(
+        gosdk.WithSecurity(shared.Security{
+            APIKeyAuth: "",
         }),
     )
+    connectionID := 548814
 
     ctx := context.Background()
-    res, err := s.Connection.GetNamespaces(ctx, 548814)
+    res, err := s.Connection.GetNamespaces(ctx, connectionID)
     if err != nil {
         log.Fatal(err)
     }

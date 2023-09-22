@@ -9,3 +9,38 @@ type RedshiftConfig struct {
 	Port         string `json:"port"`
 	Username     string `json:"username"`
 }
+
+func (o *RedshiftConfig) GetDatabaseName() string {
+	if o == nil {
+		return ""
+	}
+	return o.DatabaseName
+}
+
+func (o *RedshiftConfig) GetHost() string {
+	if o == nil {
+		return ""
+	}
+	return o.Host
+}
+
+func (o *RedshiftConfig) GetPassword() string {
+	if o == nil {
+		return ""
+	}
+	return o.Password
+}
+
+func (o *RedshiftConfig) GetPort() string {
+	if o == nil {
+		return ""
+	}
+	return o.Port
+}
+
+func (o *RedshiftConfig) GetUsername() string {
+	if o == nil {
+		return ""
+	}
+	return o.Username
+}
