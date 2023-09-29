@@ -1,4 +1,5 @@
 # Destination
+(*Destination*)
 
 ## Overview
 
@@ -38,7 +39,7 @@ func main() {
             Credentials: gosdk.String("Paste JSON from GCP"),
             Location: "us-west1",
         },
-        ConnectionType: shared.ConnectionTypeMongodb,
+        ConnectionType: shared.ConnectionTypeSnowflake,
         DisplayName: "BigQuery",
         MongodbConfig: &shared.MongoDbConfig{
             ConnectionOptions: gosdk.String("retryWrites=true&w=majority"),

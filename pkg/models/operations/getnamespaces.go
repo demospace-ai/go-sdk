@@ -19,10 +19,13 @@ func (o *GetNamespacesRequest) GetConnectionID() int64 {
 }
 
 type GetNamespacesResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
 	// Successfully fetched namespaces
-	Namespaces  *shared.Namespaces
-	StatusCode  int
+	Namespaces *shared.Namespaces
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 }
 

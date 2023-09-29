@@ -20,8 +20,11 @@ func (o *CreateDestination200ApplicationJSON) GetDestination() *shared.Destinati
 }
 
 type CreateDestinationResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully created destination
 	CreateDestination200ApplicationJSONObject *CreateDestination200ApplicationJSON

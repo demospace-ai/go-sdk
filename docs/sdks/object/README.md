@@ -1,4 +1,5 @@
 # Object
+(*Object*)
 
 ## Overview
 
@@ -39,7 +40,7 @@ func main() {
         DisplayName: "BigQuery",
         EndCustomerIDField: "end_customer_id",
         Frequency: 30,
-        FrequencyUnits: shared.FrequencyUnitsHours,
+        FrequencyUnits: shared.FrequencyUnitsMinutes,
         Namespace: "bigquery_dataset",
         ObjectFields: []shared.ObjectField{
             shared.ObjectField{

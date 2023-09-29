@@ -1,4 +1,5 @@
 # Source
+(*Source*)
 
 ## Overview
 
@@ -38,7 +39,7 @@ func main() {
             Credentials: gosdk.String("Paste JSON from GCP"),
             Location: "us-west1",
         },
-        ConnectionType: shared.ConnectionTypeBigquery,
+        ConnectionType: shared.ConnectionTypeWebhook,
         DisplayName: "Frontend Events",
         EndCustomerID: "abcd-1234-efgh-5678",
         MongodbConfig: &shared.MongoDbConfig{

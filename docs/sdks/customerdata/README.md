@@ -1,4 +1,5 @@
 # CustomerData
+(*CustomerData*)
 
 ### Available Operations
 
@@ -27,8 +28,8 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-    endCustomerID := "vel"
-    objectID := 623564
+    endCustomerID := "once"
+    objectID := 819181
     requestBody := &operations.QueryObjectRequestBody{
         Filters: []shared.QueryFilter{
             shared.QueryFilter{

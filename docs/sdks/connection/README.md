@@ -1,4 +1,5 @@
 # Connection
+(*Connection*)
 
 ## Overview
 
@@ -33,7 +34,7 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-    connectionID := 715190
+    connectionID := 995455
 
     ctx := context.Background()
     res, err := s.Connection.GetNamespaces(ctx, connectionID)
@@ -83,9 +84,9 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-    connectionID := 844266
-    namespace := "unde"
-    tableName := "nulla"
+    connectionID := 367941
+    namespace := "hence"
+    tableName := "driver"
 
     ctx := context.Background()
     res, err := s.Connection.GetSchema(ctx, connectionID, namespace, tableName)
@@ -137,8 +138,8 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-    connectionID := 544883
-    namespace := "illum"
+    connectionID := 820803
+    namespace := "Sweden"
 
     ctx := context.Background()
     res, err := s.Connection.GetTables(ctx, connectionID, namespace)

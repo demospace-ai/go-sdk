@@ -93,8 +93,11 @@ func (o *QueryObject200ApplicationJSON) GetExampleField3() *QueryObject200Applic
 }
 
 type QueryObjectResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// The response payload will match the schema you defined when creating the object
 	QueryObject200ApplicationJSONObject *QueryObject200ApplicationJSON
