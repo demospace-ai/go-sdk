@@ -45,7 +45,6 @@ func main() {
         ObjectFields: []shared.ObjectField{
             shared.ObjectField{
                 Name: gosdk.String("event_name"),
-                Type: shared.FieldTypeTimestamp.ToPointer(),
             },
         },
         PrimaryKey: gosdk.String("event_id"),

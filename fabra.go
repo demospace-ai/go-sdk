@@ -116,6 +116,7 @@ func WithClient(client HTTPClient) SDKOption {
 		sdk.sdkConfiguration.DefaultClient = client
 	}
 }
+
 func withSecurity(security interface{}) func(context.Context) (interface{}, error) {
 	return func(context.Context) (interface{}, error) {
 		return &security, nil
@@ -123,18 +124,11 @@ func withSecurity(security interface{}) func(context.Context) (interface{}, erro
 }
 
 // WithSecurity configures the SDK to use the provided security details
-func WithSecurity(security shared.Security) SDKOption {
-	return func(sdk *Fabra) {
-		sdk.sdkConfiguration.Security = withSecurity(security)
-	}
-}
 
-// WithSecuritySource configures the SDK to invoke the Security Source function on each method call to determine authentication
-func WithSecuritySource(security func(context.Context) (shared.Security, error)) SDKOption {
+func WithSecurity(apiKeyAuth string) SDKOption {
 	return func(sdk *Fabra) {
-		sdk.sdkConfiguration.Security = func(ctx context.Context) (interface{}, error) {
-			return security(ctx)
-		}
+		security := shared.Security{APIKeyAuth: apiKeyAuth}
+		sdk.sdkConfiguration.Security = withSecurity(&security)
 	}
 }
 
@@ -150,9 +144,9 @@ func New(opts ...SDKOption) *Fabra {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0",
-			SDKVersion:        "0.8.0",
-			GenVersion:        "2.139.1",
-			UserAgent:         "speakeasy-sdk/go 0.8.0 2.139.1 0.1.0 github.com/fabra-io/go-sdk",
+			SDKVersion:        "0.9.0",
+			GenVersion:        "2.150.0",
+			UserAgent:         "speakeasy-sdk/go 0.9.0 2.150.0 0.1.0 github.com/fabra-io/go-sdk",
 		},
 	}
 	for _, opt := range opts {

@@ -9,7 +9,6 @@ import(
 	"log"
 	gosdk "github.com/fabra-io/go-sdk"
 	"github.com/fabra-io/go-sdk/pkg/models/shared"
-	"github.com/fabra-io/go-sdk/pkg/models/operations"
 )
 
 func main() {
@@ -18,7 +17,7 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-    connectionID := 995455
+    var connectionID int64 = 995455
 
     ctx := context.Background()
     res, err := s.Connection.GetNamespaces(ctx, connectionID)

@@ -47,7 +47,6 @@ func main() {
             },
         },
         Frequency: gosdk.Int64(30),
-        FrequencyUnits: shared.FrequencyUnitsMinutes.ToPointer(),
         Namespace: gosdk.String("end_customer_bigquery_dataset"),
         ObjectID: 3,
         PrimaryKey: gosdk.String("event_id"),

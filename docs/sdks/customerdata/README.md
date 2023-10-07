@@ -28,8 +28,8 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-    endCustomerID := "once"
-    objectID := 819181
+    var endCustomerID string = "once"
+    var objectID int64 = 819181
     requestBody := &operations.QueryObjectRequestBody{
         Filters: []shared.QueryFilter{
             shared.QueryFilter{

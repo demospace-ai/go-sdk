@@ -25,7 +25,6 @@ import(
 	"log"
 	gosdk "github.com/fabra-io/go-sdk"
 	"github.com/fabra-io/go-sdk/pkg/models/shared"
-	"github.com/fabra-io/go-sdk/pkg/models/operations"
 )
 
 func main() {
@@ -34,7 +33,7 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-    connectionID := 995455
+    var connectionID int64 = 995455
 
     ctx := context.Background()
     res, err := s.Connection.GetNamespaces(ctx, connectionID)
@@ -75,7 +74,6 @@ import(
 	"log"
 	gosdk "github.com/fabra-io/go-sdk"
 	"github.com/fabra-io/go-sdk/pkg/models/shared"
-	"github.com/fabra-io/go-sdk/pkg/models/operations"
 )
 
 func main() {
@@ -84,9 +82,9 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-    connectionID := 367941
-    namespace := "hence"
-    tableName := "driver"
+    var connectionID int64 = 367941
+    var namespace string = "hence"
+    var tableName string = "driver"
 
     ctx := context.Background()
     res, err := s.Connection.GetSchema(ctx, connectionID, namespace, tableName)
@@ -129,7 +127,6 @@ import(
 	"log"
 	gosdk "github.com/fabra-io/go-sdk"
 	"github.com/fabra-io/go-sdk/pkg/models/shared"
-	"github.com/fabra-io/go-sdk/pkg/models/operations"
 )
 
 func main() {
@@ -138,8 +135,8 @@ func main() {
             APIKeyAuth: "",
         }),
     )
-    connectionID := 820803
-    namespace := "Sweden"
+    var connectionID int64 = 820803
+    var namespace string = "Sweden"
 
     ctx := context.Background()
     res, err := s.Connection.GetTables(ctx, connectionID, namespace)
