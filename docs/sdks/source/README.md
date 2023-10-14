@@ -28,9 +28,7 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(shared.Security{
-            APIKeyAuth: "",
-        }),
+        gosdk.WithSecurity(""),
     )
 
     ctx := context.Background()
@@ -105,9 +103,7 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(shared.Security{
-            APIKeyAuth: "",
-        }),
+        gosdk.WithSecurity(""),
     )
 
     ctx := context.Background()

@@ -29,10 +29,10 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(shared.Security{
-            APIKeyAuth: "",
-        }),
+        gosdk.WithSecurity(""),
     )
+
+
     var connectionID int64 = 995455
 
     ctx := context.Background()
@@ -78,12 +78,14 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(shared.Security{
-            APIKeyAuth: "",
-        }),
+        gosdk.WithSecurity(""),
     )
+
+
     var connectionID int64 = 367941
+
     var namespace string = "hence"
+
     var tableName string = "driver"
 
     ctx := context.Background()
@@ -131,11 +133,12 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(shared.Security{
-            APIKeyAuth: "",
-        }),
+        gosdk.WithSecurity(""),
     )
+
+
     var connectionID int64 = 820803
+
     var namespace string = "Sweden"
 
     ctx := context.Background()

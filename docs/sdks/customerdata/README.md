@@ -24,12 +24,14 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(shared.Security{
-            APIKeyAuth: "",
-        }),
+        gosdk.WithSecurity(""),
     )
+
+
     var endCustomerID string = "once"
+
     var objectID int64 = 819181
+
     requestBody := &operations.QueryObjectRequestBody{
         Filters: []shared.QueryFilter{
             shared.QueryFilter{
