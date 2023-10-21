@@ -28,9 +28,9 @@ func main() {
     )
 
 
-    var endCustomerID string = "once"
+    var endCustomerID string = "string"
 
-    var objectID int64 = 819181
+    var objectID int64 = 906396
 
     requestBody := &operations.QueryObjectRequestBody{
         Filters: []shared.QueryFilter{

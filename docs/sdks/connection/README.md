@@ -84,9 +84,9 @@ func main() {
 
     var connectionID int64 = 367941
 
-    var namespace string = "hence"
+    var namespace string = "string"
 
-    var tableName string = "driver"
+    var tableName string = "string"
 
     ctx := context.Background()
     res, err := s.Connection.GetSchema(ctx, connectionID, namespace, tableName)
@@ -139,7 +139,7 @@ func main() {
 
     var connectionID int64 = 820803
 
-    var namespace string = "Sweden"
+    var namespace string = "string"
 
     ctx := context.Background()
     res, err := s.Connection.GetTables(ctx, connectionID, namespace)
