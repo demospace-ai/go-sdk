@@ -10,3 +10,45 @@ type SnowflakeConfig struct {
 	Username      string `json:"username"`
 	WarehouseName string `json:"warehouse_name"`
 }
+
+func (o *SnowflakeConfig) GetDatabaseName() string {
+	if o == nil {
+		return ""
+	}
+	return o.DatabaseName
+}
+
+func (o *SnowflakeConfig) GetHost() string {
+	if o == nil {
+		return ""
+	}
+	return o.Host
+}
+
+func (o *SnowflakeConfig) GetPassword() string {
+	if o == nil {
+		return ""
+	}
+	return o.Password
+}
+
+func (o *SnowflakeConfig) GetRole() string {
+	if o == nil {
+		return ""
+	}
+	return o.Role
+}
+
+func (o *SnowflakeConfig) GetUsername() string {
+	if o == nil {
+		return ""
+	}
+	return o.Username
+}
+
+func (o *SnowflakeConfig) GetWarehouseName() string {
+	if o == nil {
+		return ""
+	}
+	return o.WarehouseName
+}

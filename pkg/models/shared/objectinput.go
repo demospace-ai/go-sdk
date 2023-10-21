@@ -3,11 +3,85 @@
 package shared
 
 type ObjectInput struct {
-	DestinationID int64  `json:"destination_id"`
-	DisplayName   string `json:"display_name"`
+	CursorField   *string `json:"cursor_field,omitempty"`
+	DestinationID int64   `json:"destination_id"`
+	DisplayName   string  `json:"display_name"`
 	// This is where Fabra will insert the End Customer ID specified when creating a source.
-	EndCustomerIDField string        `json:"end_customer_id_field"`
-	Namespace          string        `json:"namespace"`
-	ObjectFields       []ObjectField `json:"object_fields,omitempty"`
-	TableName          string        `json:"table_name"`
+	EndCustomerIDField string         `json:"end_customer_id_field"`
+	Frequency          int64          `json:"frequency"`
+	FrequencyUnits     FrequencyUnits `json:"frequency_units"`
+	Namespace          string         `json:"namespace"`
+	ObjectFields       []ObjectField  `json:"object_fields,omitempty"`
+	PrimaryKey         *string        `json:"primary_key,omitempty"`
+	TableName          string         `json:"table_name"`
+}
+
+func (o *ObjectInput) GetCursorField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CursorField
+}
+
+func (o *ObjectInput) GetDestinationID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.DestinationID
+}
+
+func (o *ObjectInput) GetDisplayName() string {
+	if o == nil {
+		return ""
+	}
+	return o.DisplayName
+}
+
+func (o *ObjectInput) GetEndCustomerIDField() string {
+	if o == nil {
+		return ""
+	}
+	return o.EndCustomerIDField
+}
+
+func (o *ObjectInput) GetFrequency() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Frequency
+}
+
+func (o *ObjectInput) GetFrequencyUnits() FrequencyUnits {
+	if o == nil {
+		return FrequencyUnits("")
+	}
+	return o.FrequencyUnits
+}
+
+func (o *ObjectInput) GetNamespace() string {
+	if o == nil {
+		return ""
+	}
+	return o.Namespace
+}
+
+func (o *ObjectInput) GetObjectFields() []ObjectField {
+	if o == nil {
+		return nil
+	}
+	return o.ObjectFields
+}
+
+func (o *ObjectInput) GetPrimaryKey() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PrimaryKey
+}
+
+func (o *ObjectInput) GetTableName() string {
+	if o == nil {
+		return ""
+	}
+	return o.TableName
 }

@@ -12,10 +12,48 @@ type CreateDestination200ApplicationJSON struct {
 	Destination *shared.Destination `json:"destination,omitempty"`
 }
 
+func (o *CreateDestination200ApplicationJSON) GetDestination() *shared.Destination {
+	if o == nil {
+		return nil
+	}
+	return o.Destination
+}
+
 type CreateDestinationResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully created destination
 	CreateDestination200ApplicationJSONObject *CreateDestination200ApplicationJSON
+}
+
+func (o *CreateDestinationResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateDestinationResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateDestinationResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *CreateDestinationResponse) GetCreateDestination200ApplicationJSONObject() *CreateDestination200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateDestination200ApplicationJSONObject
 }

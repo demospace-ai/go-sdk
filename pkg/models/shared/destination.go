@@ -7,3 +7,24 @@ type Destination struct {
 	DisplayName *string     `json:"display_name,omitempty"`
 	ID          *int64      `json:"id,omitempty"`
 }
+
+func (o *Destination) GetConnection() *Connection {
+	if o == nil {
+		return nil
+	}
+	return o.Connection
+}
+
+func (o *Destination) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *Destination) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}

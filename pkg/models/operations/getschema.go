@@ -13,15 +13,74 @@ type GetSchemaRequest struct {
 	TableName    string `queryParam:"style=form,explode=true,name=tableName"`
 }
 
+func (o *GetSchemaRequest) GetConnectionID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.ConnectionID
+}
+
+func (o *GetSchemaRequest) GetNamespace() string {
+	if o == nil {
+		return ""
+	}
+	return o.Namespace
+}
+
+func (o *GetSchemaRequest) GetTableName() string {
+	if o == nil {
+		return ""
+	}
+	return o.TableName
+}
+
 // GetSchema200ApplicationJSON - Successfully fetched schema
 type GetSchema200ApplicationJSON struct {
 	Schema []shared.Field `json:"schema,omitempty"`
 }
 
+func (o *GetSchema200ApplicationJSON) GetSchema() []shared.Field {
+	if o == nil {
+		return nil
+	}
+	return o.Schema
+}
+
 type GetSchemaResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully fetched schema
 	GetSchema200ApplicationJSONObject *GetSchema200ApplicationJSON
+}
+
+func (o *GetSchemaResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetSchemaResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetSchemaResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetSchemaResponse) GetGetSchema200ApplicationJSONObject() *GetSchema200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetSchema200ApplicationJSONObject
 }

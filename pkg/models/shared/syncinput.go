@@ -3,16 +3,108 @@
 package shared
 
 type SyncInput struct {
-	CursorField    *string            `json:"cursor_field,omitempty"`
-	CustomJoin     *string            `json:"custom_join,omitempty"`
-	DestinationID  int64              `json:"destination_id"`
-	DisplayName    string             `json:"display_name"`
-	FieldMappings  []FieldMapping     `json:"field_mappings"`
-	Frequency      int64              `json:"frequency"`
-	FrequencyUnits FrequencyUnitsEnum `json:"frequency_units"`
-	Namespace      *string            `json:"namespace,omitempty"`
-	ObjectID       int64              `json:"object_id"`
-	PrimaryKey     *string            `json:"primary_key,omitempty"`
-	SourceID       int64              `json:"source_id"`
-	TableName      *string            `json:"table_name,omitempty"`
+	CursorField    *string         `json:"cursor_field,omitempty"`
+	CustomJoin     *string         `json:"custom_join,omitempty"`
+	DestinationID  int64           `json:"destination_id"`
+	DisplayName    string          `json:"display_name"`
+	EndCustomerID  string          `json:"end_customer_id"`
+	FieldMappings  []FieldMapping  `json:"field_mappings"`
+	Frequency      *int64          `json:"frequency,omitempty"`
+	FrequencyUnits *FrequencyUnits `json:"frequency_units,omitempty"`
+	Namespace      *string         `json:"namespace,omitempty"`
+	ObjectID       int64           `json:"object_id"`
+	PrimaryKey     *string         `json:"primary_key,omitempty"`
+	SourceID       int64           `json:"source_id"`
+	TableName      *string         `json:"table_name,omitempty"`
+}
+
+func (o *SyncInput) GetCursorField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CursorField
+}
+
+func (o *SyncInput) GetCustomJoin() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CustomJoin
+}
+
+func (o *SyncInput) GetDestinationID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.DestinationID
+}
+
+func (o *SyncInput) GetDisplayName() string {
+	if o == nil {
+		return ""
+	}
+	return o.DisplayName
+}
+
+func (o *SyncInput) GetEndCustomerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.EndCustomerID
+}
+
+func (o *SyncInput) GetFieldMappings() []FieldMapping {
+	if o == nil {
+		return []FieldMapping{}
+	}
+	return o.FieldMappings
+}
+
+func (o *SyncInput) GetFrequency() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Frequency
+}
+
+func (o *SyncInput) GetFrequencyUnits() *FrequencyUnits {
+	if o == nil {
+		return nil
+	}
+	return o.FrequencyUnits
+}
+
+func (o *SyncInput) GetNamespace() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Namespace
+}
+
+func (o *SyncInput) GetObjectID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.ObjectID
+}
+
+func (o *SyncInput) GetPrimaryKey() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PrimaryKey
+}
+
+func (o *SyncInput) GetSourceID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.SourceID
+}
+
+func (o *SyncInput) GetTableName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TableName
 }
