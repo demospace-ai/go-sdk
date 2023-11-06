@@ -1,4 +1,0 @@
-# Fabra SDK
-
-### Available Operations
-

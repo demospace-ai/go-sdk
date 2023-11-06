@@ -12,10 +12,48 @@ type GetObjects200ApplicationJSON struct {
 	Objects []shared.Object `json:"objects,omitempty"`
 }
 
+func (o *GetObjects200ApplicationJSON) GetObjects() []shared.Object {
+	if o == nil {
+		return nil
+	}
+	return o.Objects
+}
+
 type GetObjectsResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully fetched objects
 	GetObjects200ApplicationJSONObject *GetObjects200ApplicationJSON
+}
+
+func (o *GetObjectsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetObjectsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetObjectsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetObjectsResponse) GetGetObjects200ApplicationJSONObject() *GetObjects200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetObjects200ApplicationJSONObject
 }

@@ -19,30 +19,31 @@ go get github.com/fabra-io/go-sdk
 ```go
 package main
 
-import(
+import (
 	"context"
+	gosdk "github.com/fabra-io/go-sdk"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
 	"log"
-	"github.com/fabra-io/go-sdk"
-	"github.com/fabra-io/go-sdk/pkg/models/operations"
 )
 
 func main() {
-    s := fabra.New(
-        fabra.WithSecurity(shared.Security{
-            APIKeyAuth: "YOUR_API_KEY_HERE",
-        }),
-    )
+	s := gosdk.New(
+		gosdk.WithSecurity(""),
+	)
 
-    ctx := context.Background()
-    res, err := s.Connection.GetNamespaces(ctx, 548814)
-    if err != nil {
-        log.Fatal(err)
-    }
+	var connectionID int64 = 995455
 
-    if res.Namespaces != nil {
-        // handle response
-    }
+	ctx := context.Background()
+	res, err := s.Connection.GetNamespaces(ctx, connectionID)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Namespaces != nil {
+		// handle response
+	}
 }
+
 ```
 <!-- End SDK Example Usage -->
 
@@ -50,35 +51,183 @@ func main() {
 ## Available Resources and Operations
 
 
-### [Connection](docs/connection/README.md)
+### [Connection](docs/sdks/connection/README.md)
 
-* [GetNamespaces](docs/connection/README.md#getnamespaces) - Get all namespaces
-* [GetSchema](docs/connection/README.md#getschema) - Get schema for table
-* [GetTables](docs/connection/README.md#gettables) - Get all tables
+* [GetNamespaces](docs/sdks/connection/README.md#getnamespaces) - Get all namespaces
+* [GetSchema](docs/sdks/connection/README.md#getschema) - Get schema for table
+* [GetTables](docs/sdks/connection/README.md#gettables) - Get all tables
 
-### [Destination](docs/destination/README.md)
+### [CustomerData](docs/sdks/customerdata/README.md)
 
-* [CreateDestination](docs/destination/README.md#createdestination) - Create a new destination
-* [GetDestinations](docs/destination/README.md#getdestinations) - Get all destinations
+* [QueryObject](docs/sdks/customerdata/README.md#queryobject) - Query object record for customer
 
-### [LinkToken](docs/linktoken/README.md)
+### [Destination](docs/sdks/destination/README.md)
 
-* [CreateLinkToken](docs/linktoken/README.md#createlinktoken) - Create a new link token
+* [CreateDestination](docs/sdks/destination/README.md#createdestination) - Create a new destination
+* [GetDestinations](docs/sdks/destination/README.md#getdestinations) - Get all destinations
 
-### [Object](docs/object/README.md)
+### [LinkToken](docs/sdks/linktoken/README.md)
 
-* [CreateObject](docs/object/README.md#createobject) - Create a new object
-* [GetObjects](docs/object/README.md#getobjects) - Get all objects
+* [CreateLinkToken](docs/sdks/linktoken/README.md#createlinktoken) - Create a new link token
 
-### [Source](docs/source/README.md)
+### [Object](docs/sdks/object/README.md)
 
-* [CreateSource](docs/source/README.md#createsource) - Create a new source
-* [GetSources](docs/source/README.md#getsources) - Get all sources
+* [CreateObject](docs/sdks/object/README.md#createobject) - Create a new object
+* [GetObjects](docs/sdks/object/README.md#getobjects) - Get all objects
 
-### [Sync](docs/sync/README.md)
+### [Source](docs/sdks/source/README.md)
 
-* [CreateSync](docs/sync/README.md#createsync) - Create a new sync
-* [GetSyncs](docs/sync/README.md#getsyncs) - Get all syncs
+* [CreateSource](docs/sdks/source/README.md#createsource) - Create a new source
+* [GetSources](docs/sdks/source/README.md#getsources) - Get all sources
+
+### [Sync](docs/sdks/sync/README.md)
+
+* [CreateSync](docs/sdks/sync/README.md#createsync) - Create a new sync
+* [GetSyncs](docs/sdks/sync/README.md#getsyncs) - Get all syncs
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally using the `WithServerIndex` option when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://api.fabra.io` | None |
+
+For example:
+
+
+```go
+package main
+
+import (
+	"context"
+	gosdk "github.com/fabra-io/go-sdk"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := gosdk.New(
+		gosdk.WithSecurity(""),
+		gosdk.WithServerIndex(0),
+	)
+
+	var connectionID int64 = 995455
+
+	ctx := context.Background()
+	res, err := s.Connection.GetNamespaces(ctx, connectionID)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Namespaces != nil {
+		// handle response
+	}
+}
+
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
+
+
+```go
+package main
+
+import (
+	"context"
+	gosdk "github.com/fabra-io/go-sdk"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := gosdk.New(
+		gosdk.WithSecurity(""),
+		gosdk.WithServerURL("https://api.fabra.io"),
+	)
+
+	var connectionID int64 = 995455
+
+	ctx := context.Background()
+	res, err := s.Connection.GetNamespaces(ctx, connectionID)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Namespaces != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Go SDK makes API calls that wrap an internal HTTP client. The requirements for the HTTP client are very simple. It must match this interface:
+
+```go
+type HTTPClient interface {
+	Do(req *http.Request) (*http.Response, error)
+}
+```
+
+The built-in `net/http` client satisfies this interface and a default client based on the built-in is provided by default. To replace this default with a client of your own, you can implement this interface yourself or provide your own client configured as desired. Here's a simple example, which adds a client with a 30 second timeout.
+
+```go
+import (
+	"net/http"
+	"time"
+	"github.com/myorg/your-go-sdk"
+)
+
+var (
+	httpClient = &http.Client{Timeout: 30 * time.Second}
+	sdkClient  = sdk.New(sdk.WithClient(httpClient))
+)
+```
+
+This can be a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration.
+<!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Go Types -->
+
+<!-- End Go Types -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)

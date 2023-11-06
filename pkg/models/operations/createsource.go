@@ -12,10 +12,48 @@ type CreateSource200ApplicationJSON struct {
 	Source *shared.Source `json:"source,omitempty"`
 }
 
+func (o *CreateSource200ApplicationJSON) GetSource() *shared.Source {
+	if o == nil {
+		return nil
+	}
+	return o.Source
+}
+
 type CreateSourceResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully created source
 	CreateSource200ApplicationJSONObject *CreateSource200ApplicationJSON
+}
+
+func (o *CreateSourceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateSourceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateSourceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *CreateSourceResponse) GetCreateSource200ApplicationJSONObject() *CreateSource200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateSource200ApplicationJSONObject
 }

@@ -8,3 +8,31 @@ type MongoDbConfig struct {
 	Password          string  `json:"password"`
 	Username          string  `json:"username"`
 }
+
+func (o *MongoDbConfig) GetConnectionOptions() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ConnectionOptions
+}
+
+func (o *MongoDbConfig) GetHost() string {
+	if o == nil {
+		return ""
+	}
+	return o.Host
+}
+
+func (o *MongoDbConfig) GetPassword() string {
+	if o == nil {
+		return ""
+	}
+	return o.Password
+}
+
+func (o *MongoDbConfig) GetUsername() string {
+	if o == nil {
+		return ""
+	}
+	return o.Username
+}

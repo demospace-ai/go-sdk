@@ -3,6 +3,20 @@
 package shared
 
 type Field struct {
-	Name *string        `json:"name,omitempty"`
-	Type *FieldTypeEnum `json:"type,omitempty"`
+	Name *string    `json:"name,omitempty"`
+	Type *FieldType `json:"type,omitempty"`
+}
+
+func (o *Field) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *Field) GetType() *FieldType {
+	if o == nil {
+		return nil
+	}
+	return o.Type
 }
