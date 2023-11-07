@@ -45,47 +45,47 @@ func (o *QueryObjectRequest) GetRequestBody() *QueryObjectRequestBody {
 	return o.RequestBody
 }
 
-type QueryObject200ApplicationJSONExampleField3 struct {
+type ExampleField3 struct {
 	NestedField1 *string `json:"nested_field_1,omitempty"`
 	NestedField2 *int64  `json:"nested_field_2,omitempty"`
 }
 
-func (o *QueryObject200ApplicationJSONExampleField3) GetNestedField1() *string {
+func (o *ExampleField3) GetNestedField1() *string {
 	if o == nil {
 		return nil
 	}
 	return o.NestedField1
 }
 
-func (o *QueryObject200ApplicationJSONExampleField3) GetNestedField2() *int64 {
+func (o *ExampleField3) GetNestedField2() *int64 {
 	if o == nil {
 		return nil
 	}
 	return o.NestedField2
 }
 
-// QueryObject200ApplicationJSON - The response payload will match the schema you defined when creating the object
-type QueryObject200ApplicationJSON struct {
-	ExampleField1 *int64                                      `json:"example_field_1,omitempty"`
-	ExampleField2 *string                                     `json:"example_field_2,omitempty"`
-	ExampleField3 *QueryObject200ApplicationJSONExampleField3 `json:"example_field_3,omitempty"`
+// QueryObjectResponseBody - The response payload will match the schema you defined when creating the object
+type QueryObjectResponseBody struct {
+	ExampleField1 *int64         `json:"example_field_1,omitempty"`
+	ExampleField2 *string        `json:"example_field_2,omitempty"`
+	ExampleField3 *ExampleField3 `json:"example_field_3,omitempty"`
 }
 
-func (o *QueryObject200ApplicationJSON) GetExampleField1() *int64 {
+func (o *QueryObjectResponseBody) GetExampleField1() *int64 {
 	if o == nil {
 		return nil
 	}
 	return o.ExampleField1
 }
 
-func (o *QueryObject200ApplicationJSON) GetExampleField2() *string {
+func (o *QueryObjectResponseBody) GetExampleField2() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ExampleField2
 }
 
-func (o *QueryObject200ApplicationJSON) GetExampleField3() *QueryObject200ApplicationJSONExampleField3 {
+func (o *QueryObjectResponseBody) GetExampleField3() *ExampleField3 {
 	if o == nil {
 		return nil
 	}
@@ -100,7 +100,7 @@ type QueryObjectResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// The response payload will match the schema you defined when creating the object
-	QueryObject200ApplicationJSONObject *QueryObject200ApplicationJSON
+	Object *QueryObjectResponseBody
 }
 
 func (o *QueryObjectResponse) GetContentType() string {
@@ -124,9 +124,9 @@ func (o *QueryObjectResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *QueryObjectResponse) GetQueryObject200ApplicationJSONObject() *QueryObject200ApplicationJSON {
+func (o *QueryObjectResponse) GetObject() *QueryObjectResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.QueryObject200ApplicationJSONObject
+	return o.Object
 }

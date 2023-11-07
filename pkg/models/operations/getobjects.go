@@ -7,12 +7,12 @@ import (
 	"net/http"
 )
 
-// GetObjects200ApplicationJSON - Successfully fetched objects
-type GetObjects200ApplicationJSON struct {
+// GetObjectsResponseBody - Successfully fetched objects
+type GetObjectsResponseBody struct {
 	Objects []shared.Object `json:"objects,omitempty"`
 }
 
-func (o *GetObjects200ApplicationJSON) GetObjects() []shared.Object {
+func (o *GetObjectsResponseBody) GetObjects() []shared.Object {
 	if o == nil {
 		return nil
 	}
@@ -27,7 +27,7 @@ type GetObjectsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully fetched objects
-	GetObjects200ApplicationJSONObject *GetObjects200ApplicationJSON
+	Object *GetObjectsResponseBody
 }
 
 func (o *GetObjectsResponse) GetContentType() string {
@@ -51,9 +51,9 @@ func (o *GetObjectsResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetObjectsResponse) GetGetObjects200ApplicationJSONObject() *GetObjects200ApplicationJSON {
+func (o *GetObjectsResponse) GetObject() *GetObjectsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GetObjects200ApplicationJSONObject
+	return o.Object
 }

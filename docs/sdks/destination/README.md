@@ -1,5 +1,5 @@
 # Destination
-(*Destination*)
+(*.Destination*)
 
 ## Overview
 
@@ -65,7 +65,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CreateDestination200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -111,7 +111,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetDestinations200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }

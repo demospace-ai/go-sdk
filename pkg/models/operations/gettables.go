@@ -25,12 +25,12 @@ func (o *GetTablesRequest) GetNamespace() string {
 	return o.Namespace
 }
 
-// GetTables200ApplicationJSON - Successfully fetched tables
-type GetTables200ApplicationJSON struct {
+// GetTablesResponseBody - Successfully fetched tables
+type GetTablesResponseBody struct {
 	Tables []string `json:"tables,omitempty"`
 }
 
-func (o *GetTables200ApplicationJSON) GetTables() []string {
+func (o *GetTablesResponseBody) GetTables() []string {
 	if o == nil {
 		return nil
 	}
@@ -45,7 +45,7 @@ type GetTablesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully fetched tables
-	GetTables200ApplicationJSONObject *GetTables200ApplicationJSON
+	Object *GetTablesResponseBody
 }
 
 func (o *GetTablesResponse) GetContentType() string {
@@ -69,9 +69,9 @@ func (o *GetTablesResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetTablesResponse) GetGetTables200ApplicationJSONObject() *GetTables200ApplicationJSON {
+func (o *GetTablesResponse) GetObject() *GetTablesResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GetTables200ApplicationJSONObject
+	return o.Object
 }

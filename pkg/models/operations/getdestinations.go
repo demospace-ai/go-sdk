@@ -7,12 +7,12 @@ import (
 	"net/http"
 )
 
-// GetDestinations200ApplicationJSON - Successfully fetched destinations
-type GetDestinations200ApplicationJSON struct {
+// GetDestinationsResponseBody - Successfully fetched destinations
+type GetDestinationsResponseBody struct {
 	Destinations []shared.Destination `json:"destinations,omitempty"`
 }
 
-func (o *GetDestinations200ApplicationJSON) GetDestinations() []shared.Destination {
+func (o *GetDestinationsResponseBody) GetDestinations() []shared.Destination {
 	if o == nil {
 		return nil
 	}
@@ -27,7 +27,7 @@ type GetDestinationsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully fetched destinations
-	GetDestinations200ApplicationJSONObject *GetDestinations200ApplicationJSON
+	Object *GetDestinationsResponseBody
 }
 
 func (o *GetDestinationsResponse) GetContentType() string {
@@ -51,9 +51,9 @@ func (o *GetDestinationsResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetDestinationsResponse) GetGetDestinations200ApplicationJSONObject() *GetDestinations200ApplicationJSON {
+func (o *GetDestinationsResponse) GetObject() *GetDestinationsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GetDestinations200ApplicationJSONObject
+	return o.Object
 }

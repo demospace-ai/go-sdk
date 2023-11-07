@@ -97,3 +97,13 @@ Based on:
 - [go v0.7.0] .
 ### Releases
 - [Go v0.7.0] https://github.com/fabra-io/go-sdk/releases/tag/v0.7.0 - .
+
+## 2023-11-07 00:02:16
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.114.1 (2.181.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.8.0] .
+### Releases
+- [Go v0.8.0] https://github.com/fabra-io/go-sdk/releases/tag/v0.8.0 - .

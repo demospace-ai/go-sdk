@@ -7,12 +7,12 @@ import (
 	"net/http"
 )
 
-// CreateDestination200ApplicationJSON - Successfully created destination
-type CreateDestination200ApplicationJSON struct {
+// CreateDestinationResponseBody - Successfully created destination
+type CreateDestinationResponseBody struct {
 	Destination *shared.Destination `json:"destination,omitempty"`
 }
 
-func (o *CreateDestination200ApplicationJSON) GetDestination() *shared.Destination {
+func (o *CreateDestinationResponseBody) GetDestination() *shared.Destination {
 	if o == nil {
 		return nil
 	}
@@ -27,7 +27,7 @@ type CreateDestinationResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully created destination
-	CreateDestination200ApplicationJSONObject *CreateDestination200ApplicationJSON
+	Object *CreateDestinationResponseBody
 }
 
 func (o *CreateDestinationResponse) GetContentType() string {
@@ -51,9 +51,9 @@ func (o *CreateDestinationResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *CreateDestinationResponse) GetCreateDestination200ApplicationJSONObject() *CreateDestination200ApplicationJSON {
+func (o *CreateDestinationResponse) GetObject() *CreateDestinationResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.CreateDestination200ApplicationJSONObject
+	return o.Object
 }

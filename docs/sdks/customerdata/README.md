@@ -1,5 +1,5 @@
 # CustomerData
-(*CustomerData*)
+(*.CustomerData*)
 
 ### Available Operations
 
@@ -47,7 +47,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.QueryObject200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }

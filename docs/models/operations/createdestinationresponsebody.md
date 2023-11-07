@@ -1,4 +1,4 @@
-# CreateDestination200ApplicationJSON
+# CreateDestinationResponseBody
 
 Successfully created destination
 

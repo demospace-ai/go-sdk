@@ -1,4 +1,4 @@
-# GetTables200ApplicationJSON
+# GetTablesResponseBody
 
 Successfully fetched tables
 

@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// sync - Operations on syncs
-type sync struct {
+// Sync - Operations on syncs
+type Sync struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSync(sdkConfig sdkConfiguration) *sync {
-	return &sync{
+func newSync(sdkConfig sdkConfiguration) *Sync {
+	return &Sync{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateSync - Create a new sync
-func (s *sync) CreateSync(ctx context.Context, request shared.SyncInput) (*operations.CreateSyncResponse, error) {
+func (s *Sync) CreateSync(ctx context.Context, request shared.SyncInput) (*operations.CreateSyncResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/sync"
 
@@ -76,25 +76,30 @@ func (s *sync) CreateSync(ctx context.Context, request shared.SyncInput) (*opera
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateSync200ApplicationJSON
+			var out operations.CreateSyncResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateSync200ApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
 }
 
 // GetSyncs - Get all syncs
-func (s *sync) GetSyncs(ctx context.Context) (*operations.GetSyncsResponse, error) {
+func (s *Sync) GetSyncs(ctx context.Context) (*operations.GetSyncsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/syncs"
 
@@ -133,18 +138,23 @@ func (s *sync) GetSyncs(ctx context.Context) (*operations.GetSyncsResponse, erro
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetSyncs200ApplicationJSON
+			var out operations.GetSyncsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSyncs200ApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

@@ -34,12 +34,12 @@ func (o *GetSchemaRequest) GetTableName() string {
 	return o.TableName
 }
 
-// GetSchema200ApplicationJSON - Successfully fetched schema
-type GetSchema200ApplicationJSON struct {
+// GetSchemaResponseBody - Successfully fetched schema
+type GetSchemaResponseBody struct {
 	Schema []shared.Field `json:"schema,omitempty"`
 }
 
-func (o *GetSchema200ApplicationJSON) GetSchema() []shared.Field {
+func (o *GetSchemaResponseBody) GetSchema() []shared.Field {
 	if o == nil {
 		return nil
 	}
@@ -54,7 +54,7 @@ type GetSchemaResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully fetched schema
-	GetSchema200ApplicationJSONObject *GetSchema200ApplicationJSON
+	Object *GetSchemaResponseBody
 }
 
 func (o *GetSchemaResponse) GetContentType() string {
@@ -78,9 +78,9 @@ func (o *GetSchemaResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetSchemaResponse) GetGetSchema200ApplicationJSONObject() *GetSchema200ApplicationJSON {
+func (o *GetSchemaResponse) GetObject() *GetSchemaResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GetSchema200ApplicationJSONObject
+	return o.Object
 }

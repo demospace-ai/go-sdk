@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// connection - Operations on connections
-type connection struct {
+// Connection - Operations on connections
+type Connection struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newConnection(sdkConfig sdkConfiguration) *connection {
-	return &connection{
+func newConnection(sdkConfig sdkConfiguration) *Connection {
+	return &Connection{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetNamespaces - Get all namespaces
-func (s *connection) GetNamespaces(ctx context.Context, connectionID int64) (*operations.GetNamespacesResponse, error) {
+func (s *Connection) GetNamespaces(ctx context.Context, connectionID int64) (*operations.GetNamespacesResponse, error) {
 	request := operations.GetNamespacesRequest{
 		ConnectionID: connectionID,
 	}
@@ -85,14 +85,19 @@ func (s *connection) GetNamespaces(ctx context.Context, connectionID int64) (*op
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
 }
 
 // GetSchema - Get schema for table
-func (s *connection) GetSchema(ctx context.Context, connectionID int64, namespace string, tableName string) (*operations.GetSchemaResponse, error) {
+func (s *Connection) GetSchema(ctx context.Context, connectionID int64, namespace string, tableName string) (*operations.GetSchemaResponse, error) {
 	request := operations.GetSchemaRequest{
 		ConnectionID: connectionID,
 		Namespace:    namespace,
@@ -141,25 +146,30 @@ func (s *connection) GetSchema(ctx context.Context, connectionID int64, namespac
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetSchema200ApplicationJSON
+			var out operations.GetSchemaResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSchema200ApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
 }
 
 // GetTables - Get all tables
-func (s *connection) GetTables(ctx context.Context, connectionID int64, namespace string) (*operations.GetTablesResponse, error) {
+func (s *Connection) GetTables(ctx context.Context, connectionID int64, namespace string) (*operations.GetTablesResponse, error) {
 	request := operations.GetTablesRequest{
 		ConnectionID: connectionID,
 		Namespace:    namespace,
@@ -207,18 +217,23 @@ func (s *connection) GetTables(ctx context.Context, connectionID int64, namespac
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetTables200ApplicationJSON
+			var out operations.GetTablesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetTables200ApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

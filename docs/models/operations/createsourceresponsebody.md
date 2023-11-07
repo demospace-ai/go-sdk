@@ -1,10 +1,10 @@
-# CreateObject200ApplicationJSON
+# CreateSourceResponseBody
 
-Successfully created object
+Successfully created source
 
 
 ## Fields
 
 | Field                                           | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| `Object`                                        | [*shared.Object](../../models/shared/object.md) | :heavy_minus_sign:                              | N/A                                             |
+| `Source`                                        | [*shared.Source](../../models/shared/source.md) | :heavy_minus_sign:                              | N/A                                             |

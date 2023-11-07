@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// object - Operations on objects
-type object struct {
+// Object - Operations on objects
+type Object struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newObject(sdkConfig sdkConfiguration) *object {
-	return &object{
+func newObject(sdkConfig sdkConfiguration) *Object {
+	return &Object{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateObject - Create a new object
-func (s *object) CreateObject(ctx context.Context, request shared.ObjectInput) (*operations.CreateObjectResponse, error) {
+func (s *Object) CreateObject(ctx context.Context, request shared.ObjectInput) (*operations.CreateObjectResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/object"
 
@@ -76,25 +76,30 @@ func (s *object) CreateObject(ctx context.Context, request shared.ObjectInput) (
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateObject200ApplicationJSON
+			var out operations.CreateObjectResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateObject200ApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
 }
 
 // GetObjects - Get all objects
-func (s *object) GetObjects(ctx context.Context) (*operations.GetObjectsResponse, error) {
+func (s *Object) GetObjects(ctx context.Context) (*operations.GetObjectsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/objects"
 
@@ -133,18 +138,23 @@ func (s *object) GetObjects(ctx context.Context) (*operations.GetObjectsResponse
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetObjects200ApplicationJSON
+			var out operations.GetObjectsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetObjects200ApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

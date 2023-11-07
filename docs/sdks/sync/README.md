@@ -1,5 +1,5 @@
 # Sync
-(*Sync*)
+(*.Sync*)
 
 ## Overview
 
@@ -55,7 +55,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CreateSync200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -101,7 +101,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetSyncs200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }

@@ -1,4 +1,4 @@
-# GetDestinations200ApplicationJSON
+# GetDestinationsResponseBody
 
 Successfully fetched destinations
 

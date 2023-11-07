@@ -7,12 +7,12 @@ import (
 	"net/http"
 )
 
-// GetSources200ApplicationJSON - Successfully fetched sources
-type GetSources200ApplicationJSON struct {
+// GetSourcesResponseBody - Successfully fetched sources
+type GetSourcesResponseBody struct {
 	Sources []shared.Source `json:"sources,omitempty"`
 }
 
-func (o *GetSources200ApplicationJSON) GetSources() []shared.Source {
+func (o *GetSourcesResponseBody) GetSources() []shared.Source {
 	if o == nil {
 		return nil
 	}
@@ -27,7 +27,7 @@ type GetSourcesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully fetched sources
-	GetSources200ApplicationJSONObject *GetSources200ApplicationJSON
+	Object *GetSourcesResponseBody
 }
 
 func (o *GetSourcesResponse) GetContentType() string {
@@ -51,9 +51,9 @@ func (o *GetSourcesResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetSourcesResponse) GetGetSources200ApplicationJSONObject() *GetSources200ApplicationJSON {
+func (o *GetSourcesResponse) GetObject() *GetSourcesResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GetSources200ApplicationJSONObject
+	return o.Object
 }

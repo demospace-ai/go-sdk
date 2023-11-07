@@ -1,5 +1,5 @@
 # Source
-(*Source*)
+(*.Source*)
 
 ## Overview
 
@@ -66,7 +66,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CreateSource200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -112,7 +112,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetSources200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }

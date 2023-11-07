@@ -13,19 +13,19 @@ import (
 	"net/http"
 )
 
-type customerData struct {
+type CustomerData struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newCustomerData(sdkConfig sdkConfiguration) *customerData {
-	return &customerData{
+func newCustomerData(sdkConfig sdkConfiguration) *CustomerData {
+	return &CustomerData{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // QueryObject - Query object record for customer
 // Query a single object record directly from a customer's source. The response payload will match the object schema you've defined.
-func (s *customerData) QueryObject(ctx context.Context, endCustomerID string, objectID int64, requestBody *operations.QueryObjectRequestBody) (*operations.QueryObjectResponse, error) {
+func (s *CustomerData) QueryObject(ctx context.Context, endCustomerID string, objectID int64, requestBody *operations.QueryObjectRequestBody) (*operations.QueryObjectResponse, error) {
 	request := operations.QueryObjectRequest{
 		EndCustomerID: endCustomerID,
 		ObjectID:      objectID,
@@ -80,18 +80,23 @@ func (s *customerData) QueryObject(ctx context.Context, endCustomerID string, ob
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.QueryObject200ApplicationJSON
+			var out operations.QueryObjectResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.QueryObject200ApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

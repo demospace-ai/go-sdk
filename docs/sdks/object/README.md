@@ -1,5 +1,5 @@
 # Object
-(*Object*)
+(*.Object*)
 
 ## Overview
 
@@ -52,7 +52,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CreateObject200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -98,7 +98,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetObjects200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }

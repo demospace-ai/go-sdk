@@ -1,4 +1,4 @@
-# GetSchema200ApplicationJSON
+# GetSchemaResponseBody
 
 Successfully fetched schema
 

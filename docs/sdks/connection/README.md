@@ -1,5 +1,5 @@
 # Connection
-(*Connection*)
+(*.Connection*)
 
 ## Overview
 
@@ -94,7 +94,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetSchema200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -147,7 +147,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetTables200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }

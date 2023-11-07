@@ -63,18 +63,18 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 
 type Fabra struct {
 	// Operations on connections
-	Connection   *connection
-	CustomerData *customerData
+	Connection   *Connection
+	CustomerData *CustomerData
 	// Operations on destinations
-	Destination *destination
+	Destination *Destination
 	// Operations on link tokens
-	LinkToken *linkToken
+	LinkToken *LinkToken
 	// Operations on objects
-	Object *object
+	Object *Object
 	// Operations on sources
-	Source *source
+	Source *Source
 	// Operations on syncs
-	Sync *sync
+	Sync *Sync
 
 	sdkConfiguration sdkConfiguration
 }
@@ -144,9 +144,9 @@ func New(opts ...SDKOption) *Fabra {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0",
-			SDKVersion:        "0.7.0",
-			GenVersion:        "2.173.0",
-			UserAgent:         "speakeasy-sdk/go 0.7.0 2.173.0 0.1.0 github.com/fabra-io/go-sdk",
+			SDKVersion:        "0.8.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.8.0 2.181.1 0.1.0 github.com/fabra-io/go-sdk",
 		},
 	}
 	for _, opt := range opts {

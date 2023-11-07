@@ -1,5 +1,5 @@
 # LinkToken
-(*LinkToken*)
+(*.LinkToken*)
 
 ## Overview
 

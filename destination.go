@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// destination - Operations on destinations
-type destination struct {
+// Destination - Operations on destinations
+type Destination struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newDestination(sdkConfig sdkConfiguration) *destination {
-	return &destination{
+func newDestination(sdkConfig sdkConfiguration) *Destination {
+	return &Destination{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateDestination - Create a new destination
-func (s *destination) CreateDestination(ctx context.Context, request shared.DestinationInput) (*operations.CreateDestinationResponse, error) {
+func (s *Destination) CreateDestination(ctx context.Context, request shared.DestinationInput) (*operations.CreateDestinationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/destination"
 
@@ -76,25 +76,30 @@ func (s *destination) CreateDestination(ctx context.Context, request shared.Dest
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateDestination200ApplicationJSON
+			var out operations.CreateDestinationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateDestination200ApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
 }
 
 // GetDestinations - Get all destinations
-func (s *destination) GetDestinations(ctx context.Context) (*operations.GetDestinationsResponse, error) {
+func (s *Destination) GetDestinations(ctx context.Context) (*operations.GetDestinationsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/destinations"
 
@@ -133,18 +138,23 @@ func (s *destination) GetDestinations(ctx context.Context) (*operations.GetDesti
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetDestinations200ApplicationJSON
+			var out operations.GetDestinationsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestinations200ApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

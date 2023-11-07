@@ -1,4 +1,4 @@
-# GetSyncs200ApplicationJSON
+# GetSyncsResponseBody
 
 Successfully fetched syncs
 

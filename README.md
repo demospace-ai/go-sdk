@@ -51,36 +51,36 @@ func main() {
 ## Available Resources and Operations
 
 
-### [Connection](docs/sdks/connection/README.md)
+### [.Connection](docs/sdks/connection/README.md)
 
 * [GetNamespaces](docs/sdks/connection/README.md#getnamespaces) - Get all namespaces
 * [GetSchema](docs/sdks/connection/README.md#getschema) - Get schema for table
 * [GetTables](docs/sdks/connection/README.md#gettables) - Get all tables
 
-### [CustomerData](docs/sdks/customerdata/README.md)
+### [.CustomerData](docs/sdks/customerdata/README.md)
 
 * [QueryObject](docs/sdks/customerdata/README.md#queryobject) - Query object record for customer
 
-### [Destination](docs/sdks/destination/README.md)
+### [.Destination](docs/sdks/destination/README.md)
 
 * [CreateDestination](docs/sdks/destination/README.md#createdestination) - Create a new destination
 * [GetDestinations](docs/sdks/destination/README.md#getdestinations) - Get all destinations
 
-### [LinkToken](docs/sdks/linktoken/README.md)
+### [.LinkToken](docs/sdks/linktoken/README.md)
 
 * [CreateLinkToken](docs/sdks/linktoken/README.md#createlinktoken) - Create a new link token
 
-### [Object](docs/sdks/object/README.md)
+### [.Object](docs/sdks/object/README.md)
 
 * [CreateObject](docs/sdks/object/README.md#createobject) - Create a new object
 * [GetObjects](docs/sdks/object/README.md#getobjects) - Get all objects
 
-### [Source](docs/sdks/source/README.md)
+### [.Source](docs/sdks/source/README.md)
 
 * [CreateSource](docs/sdks/source/README.md#createsource) - Create a new source
 * [GetSources](docs/sdks/source/README.md#getsources) - Get all sources
 
-### [Sync](docs/sdks/sync/README.md)
+### [.Sync](docs/sdks/sync/README.md)
 
 * [CreateSync](docs/sdks/sync/README.md#createsync) - Create a new sync
 * [GetSyncs](docs/sdks/sync/README.md#getsyncs) - Get all syncs
@@ -90,8 +90,6 @@ func main() {
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -100,8 +98,6 @@ func main() {
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
-
-
 <!-- End Error Handling -->
 
 
@@ -119,7 +115,6 @@ You can override the default server globally using the `WithServerIndex` option 
 
 For example:
 
-
 ```go
 package main
 
@@ -132,8 +127,8 @@ import (
 
 func main() {
 	s := gosdk.New(
-		gosdk.WithSecurity(""),
 		gosdk.WithServerIndex(0),
+		gosdk.WithSecurity(""),
 	)
 
 	var connectionID int64 = 995455
@@ -156,7 +151,6 @@ func main() {
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
 
-
 ```go
 package main
 
@@ -169,8 +163,8 @@ import (
 
 func main() {
 	s := gosdk.New(
-		gosdk.WithSecurity(""),
 		gosdk.WithServerURL("https://api.fabra.io"),
+		gosdk.WithSecurity(""),
 	)
 
 	var connectionID int64 = 995455
@@ -225,6 +219,53 @@ This can be a convenient way to configure timeouts, cookies, proxies, custom hea
 <!-- Start Go Types -->
 
 <!-- End Go Types -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name         | Type         | Scheme       |
+| ------------ | ------------ | ------------ |
+| `APIKeyAuth` | apiKey       | API key      |
+
+You can configure it using the `WithSecurity` option when initializing the SDK client instance. For example:
+
+```go
+package main
+
+import (
+	"context"
+	gosdk "github.com/fabra-io/go-sdk"
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := gosdk.New(
+		gosdk.WithSecurity(""),
+	)
+
+	var connectionID int64 = 995455
+
+	ctx := context.Background()
+	res, err := s.Connection.GetNamespaces(ctx, connectionID)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Namespaces != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

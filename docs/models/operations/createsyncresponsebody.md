@@ -1,4 +1,4 @@
-# CreateSync200ApplicationJSON
+# CreateSyncResponseBody
 
 Successfully created sync
 

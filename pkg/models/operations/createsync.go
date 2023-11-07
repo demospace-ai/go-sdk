@@ -7,12 +7,12 @@ import (
 	"net/http"
 )
 
-// CreateSync200ApplicationJSON - Successfully created sync
-type CreateSync200ApplicationJSON struct {
+// CreateSyncResponseBody - Successfully created sync
+type CreateSyncResponseBody struct {
 	Sync *shared.Sync `json:"sync,omitempty"`
 }
 
-func (o *CreateSync200ApplicationJSON) GetSync() *shared.Sync {
+func (o *CreateSyncResponseBody) GetSync() *shared.Sync {
 	if o == nil {
 		return nil
 	}
@@ -27,7 +27,7 @@ type CreateSyncResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Successfully created sync
-	CreateSync200ApplicationJSONObject *CreateSync200ApplicationJSON
+	Object *CreateSyncResponseBody
 }
 
 func (o *CreateSyncResponse) GetContentType() string {
@@ -51,9 +51,9 @@ func (o *CreateSyncResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *CreateSyncResponse) GetCreateSync200ApplicationJSONObject() *CreateSync200ApplicationJSON {
+func (o *CreateSyncResponse) GetObject() *CreateSyncResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.CreateSync200ApplicationJSONObject
+	return o.Object
 }
