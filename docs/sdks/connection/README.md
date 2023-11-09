@@ -1,5 +1,5 @@
 # Connection
-(*.Connection*)
+(*Connection*)
 
 ## Overview
 
@@ -57,8 +57,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetNamespacesResponse](../../models/operations/getnamespacesresponse.md), error**
-
+**[*operations.GetNamespacesResponse](../../pkg/models/operations/getnamespacesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetSchema
 
@@ -112,8 +114,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetSchemaResponse](../../models/operations/getschemaresponse.md), error**
-
+**[*operations.GetSchemaResponse](../../pkg/models/operations/getschemaresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetTables
 
@@ -164,5 +168,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetTablesResponse](../../models/operations/gettablesresponse.md), error**
-
+**[*operations.GetTablesResponse](../../pkg/models/operations/gettablesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

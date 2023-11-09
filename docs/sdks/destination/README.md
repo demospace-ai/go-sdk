@@ -1,5 +1,5 @@
 # Destination
-(*.Destination*)
+(*Destination*)
 
 ## Overview
 
@@ -73,16 +73,18 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `ctx`                                                              | [context.Context](https://pkg.go.dev/context#Context)              | :heavy_check_mark:                                                 | The context to use for the request.                                |
-| `request`                                                          | [shared.DestinationInput](../../models/shared/destinationinput.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `request`                                                              | [shared.DestinationInput](../../pkg/models/shared/destinationinput.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response
 
-**[*operations.CreateDestinationResponse](../../models/operations/createdestinationresponse.md), error**
-
+**[*operations.CreateDestinationResponse](../../pkg/models/operations/createdestinationresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetDestinations
 
@@ -126,5 +128,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetDestinationsResponse](../../models/operations/getdestinationsresponse.md), error**
-
+**[*operations.GetDestinationsResponse](../../pkg/models/operations/getdestinationsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

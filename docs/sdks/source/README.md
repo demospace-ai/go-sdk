@@ -1,5 +1,5 @@
 # Source
-(*.Source*)
+(*Source*)
 
 ## Overview
 
@@ -74,16 +74,18 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `request`                                                | [shared.SourceInput](../../models/shared/sourceinput.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
+| `request`                                                    | [shared.SourceInput](../../pkg/models/shared/sourceinput.md) | :heavy_check_mark:                                           | The request object to use for the request.                   |
 
 
 ### Response
 
-**[*operations.CreateSourceResponse](../../models/operations/createsourceresponse.md), error**
-
+**[*operations.CreateSourceResponse](../../pkg/models/operations/createsourceresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetSources
 
@@ -127,5 +129,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetSourcesResponse](../../models/operations/getsourcesresponse.md), error**
-
+**[*operations.GetSourcesResponse](../../pkg/models/operations/getsourcesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

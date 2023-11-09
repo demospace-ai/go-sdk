@@ -2,20 +2,20 @@ configVersion: 1.0.0
 management:
   docChecksum: a08d8b55b00bfb4ba4828a322fd16614
   docVersion: 0.1.0
-  speakeasyVersion: 1.114.1
-  generationVersion: 2.181.1
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: fabra
   repoURL: https://github.com/fabra-io/go-sdk.git
 features:
   go:
-    core: 3.1.0
+    core: 3.1.2
     flattening: 2.81.1
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.0
 go:
-  version: 0.8.0
+  version: 0.8.1
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
@@ -26,8 +26,10 @@ go:
       operations: pkg/models/operations
       shared: pkg/models/shared
       webhooks: pkg/models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/fabra-io/go-sdk
   maxMethodParams: 5
+  outputModelSuffix: output
   packageName: github.com/fabra-io/go-sdk
   published: true
   repoSubDirectory: .

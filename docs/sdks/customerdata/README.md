@@ -1,5 +1,5 @@
 # CustomerData
-(*.CustomerData*)
+(*CustomerData*)
 
 ### Available Operations
 
@@ -55,15 +55,17 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `ctx`                                                                                   | [context.Context](https://pkg.go.dev/context#Context)                                   | :heavy_check_mark:                                                                      | The context to use for the request.                                                     |
-| `endCustomerID`                                                                         | *string*                                                                                | :heavy_check_mark:                                                                      | N/A                                                                                     |
-| `objectID`                                                                              | *int64*                                                                                 | :heavy_check_mark:                                                                      | N/A                                                                                     |
-| `requestBody`                                                                           | [*operations.QueryObjectRequestBody](../../models/operations/queryobjectrequestbody.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `endCustomerID`                                                                                | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `objectID`                                                                                     | *int64*                                                                                        | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `requestBody`                                                                                  | [*operations.QueryObjectRequestBody](../../../pkg/models/operations/queryobjectrequestbody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
 
 
 ### Response
 
-**[*operations.QueryObjectResponse](../../models/operations/queryobjectresponse.md), error**
-
+**[*operations.QueryObjectResponse](../../pkg/models/operations/queryobjectresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

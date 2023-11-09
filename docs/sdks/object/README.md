@@ -1,5 +1,5 @@
 # Object
-(*.Object*)
+(*Object*)
 
 ## Overview
 
@@ -60,16 +60,18 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `request`                                                | [shared.ObjectInput](../../models/shared/objectinput.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
+| `request`                                                    | [shared.ObjectInput](../../pkg/models/shared/objectinput.md) | :heavy_check_mark:                                           | The request object to use for the request.                   |
 
 
 ### Response
 
-**[*operations.CreateObjectResponse](../../models/operations/createobjectresponse.md), error**
-
+**[*operations.CreateObjectResponse](../../pkg/models/operations/createobjectresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetObjects
 
@@ -113,5 +115,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetObjectsResponse](../../models/operations/getobjectsresponse.md), error**
-
+**[*operations.GetObjectsResponse](../../pkg/models/operations/getobjectsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
