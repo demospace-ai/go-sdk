@@ -15,11 +15,11 @@ Query a single object record directly from a customer's source. The response pay
 package main
 
 import(
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	gosdk "github.com/fabra-io/go-sdk"
+	"github.com/fabra-io/go-sdk/pkg/models/operations"
 	"context"
 	"log"
-	gosdk "github.com/fabra-io/go-sdk"
-	"github.com/fabra-io/go-sdk/pkg/models/shared"
-	"github.com/fabra-io/go-sdk/pkg/models/operations"
 )
 
 func main() {

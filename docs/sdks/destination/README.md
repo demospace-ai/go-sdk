@@ -20,10 +20,10 @@ Create a new destination
 package main
 
 import(
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	gosdk "github.com/fabra-io/go-sdk"
 	"context"
 	"log"
-	gosdk "github.com/fabra-io/go-sdk"
-	"github.com/fabra-io/go-sdk/pkg/models/shared"
 )
 
 func main() {
@@ -96,10 +96,10 @@ Get all destinations
 package main
 
 import(
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	gosdk "github.com/fabra-io/go-sdk"
 	"context"
 	"log"
-	gosdk "github.com/fabra-io/go-sdk"
-	"github.com/fabra-io/go-sdk/pkg/models/shared"
 )
 
 func main() {

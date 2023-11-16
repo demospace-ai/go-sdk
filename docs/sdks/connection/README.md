@@ -21,10 +21,10 @@ Get all namespaces
 package main
 
 import(
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	gosdk "github.com/fabra-io/go-sdk"
 	"context"
 	"log"
-	gosdk "github.com/fabra-io/go-sdk"
-	"github.com/fabra-io/go-sdk/pkg/models/shared"
 )
 
 func main() {
@@ -72,10 +72,10 @@ Get schema for table
 package main
 
 import(
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	gosdk "github.com/fabra-io/go-sdk"
 	"context"
 	"log"
-	gosdk "github.com/fabra-io/go-sdk"
-	"github.com/fabra-io/go-sdk/pkg/models/shared"
 )
 
 func main() {
@@ -129,10 +129,10 @@ Get all tables
 package main
 
 import(
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	gosdk "github.com/fabra-io/go-sdk"
 	"context"
 	"log"
-	gosdk "github.com/fabra-io/go-sdk"
-	"github.com/fabra-io/go-sdk/pkg/models/shared"
 )
 
 func main() {

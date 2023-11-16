@@ -20,10 +20,10 @@ Create a new object
 package main
 
 import(
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	gosdk "github.com/fabra-io/go-sdk"
 	"context"
 	"log"
-	gosdk "github.com/fabra-io/go-sdk"
-	"github.com/fabra-io/go-sdk/pkg/models/shared"
 )
 
 func main() {
@@ -83,10 +83,10 @@ Get all objects
 package main
 
 import(
+	"github.com/fabra-io/go-sdk/pkg/models/shared"
+	gosdk "github.com/fabra-io/go-sdk"
 	"context"
 	"log"
-	gosdk "github.com/fabra-io/go-sdk"
-	"github.com/fabra-io/go-sdk/pkg/models/shared"
 )
 
 func main() {
