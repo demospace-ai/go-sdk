@@ -29,7 +29,7 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(""),
+        gosdk.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
 
@@ -80,7 +80,7 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(""),
+        gosdk.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
 
@@ -137,7 +137,7 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(""),
+        gosdk.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
 

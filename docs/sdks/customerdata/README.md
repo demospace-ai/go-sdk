@@ -24,7 +24,7 @@ import(
 
 func main() {
     s := gosdk.New(
-        gosdk.WithSecurity(""),
+        gosdk.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
 
@@ -55,12 +55,12 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `endCustomerID`                                                                                | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `objectID`                                                                                     | *int64*                                                                                        | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `requestBody`                                                                                  | [*operations.QueryObjectRequestBody](../../../pkg/models/operations/queryobjectrequestbody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                       | [context.Context](https://pkg.go.dev/context#Context)                                       | :heavy_check_mark:                                                                          | The context to use for the request.                                                         |
+| `endCustomerID`                                                                             | *string*                                                                                    | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `objectID`                                                                                  | *int64*                                                                                     | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `requestBody`                                                                               | [*operations.QueryObjectRequestBody](../../pkg/models/operations/queryobjectrequestbody.md) | :heavy_minus_sign:                                                                          | N/A                                                                                         |
 
 
 ### Response

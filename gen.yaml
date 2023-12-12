@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: a08d8b55b00bfb4ba4828a322fd16614
   docVersion: 0.1.0
-  speakeasyVersion: 1.121.3
-  generationVersion: 2.195.2
+  speakeasyVersion: 1.126.0
+  generationVersion: 2.213.3
 generation:
   comments: {}
   sdkClassName: fabra
@@ -12,12 +12,12 @@ generation:
     optionalPropertyRendering: withExample
 features:
   go:
-    core: 3.1.5
+    core: 3.2.0
     flattening: 2.81.1
-    globalSecurity: 2.82.2
+    globalSecurity: 2.82.3
     globalServerURLs: 2.82.1
 go:
-  version: 0.8.3
+  version: 0.9.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:

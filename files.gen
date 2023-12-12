@@ -62,7 +62,6 @@ pkg/utils/utils.go
 /pkg/models/shared/fieldmapping.go
 /pkg/models/shared/syncinput.go
 /pkg/models/shared/security.go
-USAGE.md
 docs/pkg/models/operations/getnamespacesrequest.md
 docs/pkg/models/operations/getnamespacesresponse.md
 docs/pkg/models/operations/getschemarequest.md
@@ -125,4 +124,5 @@ docs/sdks/linktoken/README.md
 docs/sdks/object/README.md
 docs/sdks/source/README.md
 docs/sdks/sync/README.md
+USAGE.md
 .gitattributes
