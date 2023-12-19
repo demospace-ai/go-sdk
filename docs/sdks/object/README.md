@@ -71,7 +71,7 @@ func main() {
 **[*operations.CreateObjectResponse](../../pkg/models/operations/createobjectresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetObjects
 
@@ -118,4 +118,4 @@ func main() {
 **[*operations.GetObjectsResponse](../../pkg/models/operations/getobjectsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

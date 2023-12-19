@@ -85,7 +85,7 @@ func main() {
 **[*operations.CreateSourceResponse](../../pkg/models/operations/createsourceresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetSources
 
@@ -132,4 +132,4 @@ func main() {
 **[*operations.GetSourcesResponse](../../pkg/models/operations/getsourcesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

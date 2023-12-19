@@ -60,7 +60,7 @@ func main() {
 **[*operations.GetNamespacesResponse](../../pkg/models/operations/getnamespacesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetSchema
 
@@ -117,7 +117,7 @@ func main() {
 **[*operations.GetSchemaResponse](../../pkg/models/operations/getschemaresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetTables
 
@@ -171,4 +171,4 @@ func main() {
 **[*operations.GetTablesResponse](../../pkg/models/operations/gettablesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

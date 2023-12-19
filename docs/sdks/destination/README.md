@@ -84,7 +84,7 @@ func main() {
 **[*operations.CreateDestinationResponse](../../pkg/models/operations/createdestinationresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDestinations
 
@@ -131,4 +131,4 @@ func main() {
 **[*operations.GetDestinationsResponse](../../pkg/models/operations/getdestinationsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
