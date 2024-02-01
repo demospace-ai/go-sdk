@@ -187,3 +187,13 @@ Based on:
 - [go v0.9.3] .
 ### Releases
 - [Go v0.9.3] https://github.com/fabra-io/go-sdk/releases/tag/v0.9.3 - .
+
+## 2024-02-01 00:02:47
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.161.0 (2.245.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.9.4] .
+### Releases
+- [Go v0.9.4] https://github.com/fabra-io/go-sdk/releases/tag/v0.9.4 - .
