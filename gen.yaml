@@ -5,8 +5,9 @@ generation:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
 go:
-  version: 0.9.4
+  version: 0.10.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
