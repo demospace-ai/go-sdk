@@ -40,11 +40,6 @@ func main() {
         Frequency: 30,
         FrequencyUnits: shared.FrequencyUnitsMinutes,
         Namespace: "bigquery_dataset",
-        ObjectFields: []shared.ObjectField{
-            shared.ObjectField{
-                Name: gosdk.String("event_name"),
-            },
-        },
         PrimaryKey: gosdk.String("event_id"),
         TableName: "events",
     })

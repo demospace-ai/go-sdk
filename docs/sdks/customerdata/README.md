@@ -32,14 +32,7 @@ func main() {
 
     var objectID int64 = 906396
 
-    requestBody := &operations.QueryObjectRequestBody{
-        Filters: []shared.QueryFilter{
-            shared.QueryFilter{
-                FieldName: "user_id",
-                FieldValue: "2",
-            },
-        },
-    }
+    requestBody := &operations.QueryObjectRequestBody{}
 
     ctx := context.Background()
     res, err := s.CustomerData.QueryObject(ctx, endCustomerID, objectID, requestBody)
