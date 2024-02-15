@@ -28,7 +28,7 @@ func main() {
     )
 
 
-    var endCustomerID string = "string"
+    var endCustomerID string = "<value>"
 
     var objectID int64 = 906396
 

@@ -86,9 +86,9 @@ func main() {
 
     var connectionID int64 = 367941
 
-    var namespace string = "string"
+    var namespace string = "<value>"
 
-    var tableName string = "string"
+    var tableName string = "<value>"
 
     ctx := context.Background()
     res, err := s.Connection.GetSchema(ctx, connectionID, namespace, tableName)
@@ -143,7 +143,7 @@ func main() {
 
     var connectionID int64 = 820803
 
-    var namespace string = "string"
+    var namespace string = "<value>"
 
     ctx := context.Background()
     res, err := s.Connection.GetTables(ctx, connectionID, namespace)
