@@ -154,9 +154,9 @@ func New(opts ...SDKOption) *Fabra {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0",
-			SDKVersion:        "0.11.0",
-			GenVersion:        "2.258.0",
-			UserAgent:         "speakeasy-sdk/go 0.11.0 2.258.0 0.1.0 github.com/fabra-io/go-sdk",
+			SDKVersion:        "0.11.1",
+			GenVersion:        "2.263.3",
+			UserAgent:         "speakeasy-sdk/go 0.11.1 2.263.3 0.1.0 github.com/fabra-io/go-sdk",
 			Hooks:             hooks.New(),
 		},
 	}

@@ -50,12 +50,12 @@ func (s *Sync) CreateSync(ctx context.Context, request shared.SyncInput) (*opera
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -78,7 +78,6 @@ func (s *Sync) CreateSync(ctx context.Context, request shared.SyncInput) (*opera
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateSyncResponse{
@@ -137,12 +136,12 @@ func (s *Sync) GetSyncs(ctx context.Context) (*operations.GetSyncsResponse, erro
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -165,7 +164,6 @@ func (s *Sync) GetSyncs(ctx context.Context) (*operations.GetSyncsResponse, erro
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetSyncsResponse{

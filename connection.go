@@ -52,12 +52,12 @@ func (s *Connection) GetNamespaces(ctx context.Context, connectionID int64) (*op
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -80,7 +80,6 @@ func (s *Connection) GetNamespaces(ctx context.Context, connectionID int64) (*op
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetNamespacesResponse{
@@ -149,12 +148,12 @@ func (s *Connection) GetSchema(ctx context.Context, connectionID int64, namespac
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -177,7 +176,6 @@ func (s *Connection) GetSchema(ctx context.Context, connectionID int64, namespac
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetSchemaResponse{
@@ -245,12 +243,12 @@ func (s *Connection) GetTables(ctx context.Context, connectionID int64, namespac
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -273,7 +271,6 @@ func (s *Connection) GetTables(ctx context.Context, connectionID int64, namespac
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetTablesResponse{
