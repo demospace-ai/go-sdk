@@ -4,9 +4,9 @@ management:
   docChecksum: a08d8b55b00bfb4ba4828a322fd16614
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 0.11.2
-  configChecksum: 729237ad4ea2105e6542938baf76806b
+  generationVersion: 2.272.7
+  releaseVersion: 0.11.3
+  configChecksum: ce412a0173f430f0c528691693aa1c6f
   repoURL: https://github.com/fabra-io/go-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/fabra-io/go-sdk
@@ -15,7 +15,7 @@ features:
   go:
     core: 3.4.3
     flattening: 2.81.1
-    globalSecurity: 2.82.7
+    globalSecurity: 2.82.8
     globalServerURLs: 2.82.1
 generatedFiles:
   - connection.go
