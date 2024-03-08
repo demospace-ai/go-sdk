@@ -21,7 +21,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	if res.Namespaces != nil {
 		// handle response
 	}

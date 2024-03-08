@@ -10,7 +10,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 go:
-  version: 0.11.3
+  version: 0.12.0
   additionalDependencies: {}
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
@@ -26,3 +26,4 @@ go:
   maxMethodParams: 5
   outputModelSuffix: output
   packageName: github.com/fabra-io/go-sdk
+  responseFormat: envelope
